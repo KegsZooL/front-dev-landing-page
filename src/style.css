@@ -1,3 +1,13 @@
+@font-face {
+  font-family: Oswald-Light;
+  src: url(resources/font/Oswald/Oswald-Light.ttf);
+}
+
+@font-face {
+  font-family: Finlandica-SemiBold;
+  src: url(resources/font/Finlandica/Finlandica-SemiBold.ttf);
+}
+
 body {
   background-color: #E7E8E5;
 }
@@ -22,6 +32,7 @@ body {
   align-items: center;
   height: 100%;
   padding: 7px 0px;
+  font-family: Finlandica-SemiBold;
 }
 
 .company-name {
@@ -34,6 +45,7 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  font-family: Oswald-Light;
 }
 
 .navbar-menu li{
@@ -46,6 +58,18 @@ body {
   font-weight: 200;
 }
 
+.buttonMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.buttonMenu .line {
+  display: inline-block;
+  background-color: #D9D9D9;
+}
 
 @media (min-width: 1400px) {
   .navbar {
@@ -62,6 +86,9 @@ body {
     margin-right: 24px;
     height: 66px;
     width: 88px;
+  }
+  .buttonMenu {
+    display: none;
   }
 }
 
@@ -81,6 +108,9 @@ body {
     height: 66px;
     width: 88px;
   }
+  .buttonMenu {
+    display: none;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -99,6 +129,9 @@ body {
     height: 54px;
     width: 71px;
   }
+  .buttonMenu {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -113,6 +146,18 @@ body {
     margin-right: 24px;
     height: 66px;
     width: 88px;
+  }
+  .navbar-menu {
+    display: none;
+  }
+  .buttonMenu {
+    width: 96px;
+    height: 43px;
+  }
+  .buttonMenu .line {
+    width: 96px;
+    height: 7px;
+    border-style: 30px;
   }
 }
 
@@ -129,6 +174,18 @@ body {
     height: 40px;
     width: 52px;
   }
+  .navbar-menu {
+    display: none;
+  }
+  .buttonMenu {
+    width: 74px;
+    height: 24px;
+  }
+  .buttonMenu .line {
+    width: 74px;
+    height: 4px;
+    border-style: 5px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -136,12 +193,24 @@ body {
     height: 64px;
     padding: 3px 11px;
   }
-  .comapny-name {
+  .company-name {
     font-size: 20px;
   }
   .logo {
     margin-right: 10px;
     height: 40px;
     width: 52px;
+  }
+  .navbar-menu {
+    display: none;
+  }
+  .buttonMenu {
+    width: 74px;
+    height: 24px;
+  }
+  .buttonMenu .line {
+    width: 74px;
+    height: 4px;
+    border-style: 5px;
   }
 }
