@@ -1,0 +1,147 @@
+body {
+  background-color: #E7E8E5;
+}
+
+.navbar {
+  background-color: #17282F;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 7px 0px;
+}
+
+.company-name {
+  color: #F8F9FA;
+  font-weight: 600;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li{
+  display: inline-block;
+  margin-left: 28px;
+}
+
+.navbar-menu li a {
+  color: #F8F9FA;
+  font-weight: 200;
+}
+
+
+@media (min-width: 1400px) {
+  .navbar {
+    height: 86px;
+    padding: 3px 72px;
+  }
+  .company-name {
+    font-size: 40px;
+  }
+  .navbar-menu li a {
+    font-size: 25px;
+  }
+  .logo {
+    margin-right: 24px;
+    height: 66px;
+    width: 88px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .navbar {
+    height: 74px;
+    padding: 3px 82px;
+  }
+  .company-name {
+    font-size: 40px;
+  }
+  .navbar-menu li a {
+    font-size: 25px;
+  }
+  .logo {
+    margin-right: 24px;
+    height: 66px;
+    width: 88px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar {
+    height: 61px;
+    padding: 3px 44px;
+  }
+  .company-name {
+    font-size: 33px;
+  }
+  .navbar-menu li a {
+    font-size: 21px;
+  }
+  .logo {
+    margin-right: 24px;
+    height: 54px;
+    width: 71px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar {
+    height: 86px;
+    padding: 0px 92px;
+  }
+  .company-name {
+    font-size: 36px;
+  }
+  .logo {
+    margin-right: 24px;
+    height: 66px;
+    width: 88px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .navbar {
+    height: 64px;
+    padding: 3px 44px;
+  }
+  .company-name {
+    font-size: 20px;
+  }
+  .logo {
+    margin-right: 10px;
+    height: 40px;
+    width: 52px;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar {
+    height: 64px;
+    padding: 3px 11px;
+  }
+  .comapny-name {
+    font-size: 20px;
+  }
+  .logo {
+    margin-right: 10px;
+    height: 40px;
+    width: 52px;
+  }
+}
