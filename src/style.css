@@ -12,6 +12,13 @@ body {
   background-color: #F5F5F5;
 }
 
+footer {
+  background-color: #17282F;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 .navbar {
   background-color: #17282F;
   width: 100%;
@@ -75,23 +82,40 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 50px;
 }
 
 .course-sections .preview-of-course-structure {
   background-color: #D9D9D9;
   border-radius: 30px;
   width: 100%;
+  text-align: center;
 }
 
 .course-sections .description-of-program-structure {
   background-color: #FFFFFF;
   width: 100%;
+  border-radius: 30px;
+}
+
+.description-of-program-structure ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.description-of-program-structure ul li{
+  display: inline-block;
+  white-space: nowrap;
+  gap: 21px;
+  text-align: center;
 }
 
 .course-sections .target-audience {
   background-color: #D9D9D9;
   display: flex;
   flex-direction: column;
+  border-radius: 30px;
 }
 
 .target-audience .target-audience__content {
@@ -100,6 +124,12 @@ body {
 
 .course-sections .teachers-mentors {
   background-color: #FFFFFF;
+  border-radius: 30px;
+}
+
+.course-sections .tariffs {
+  background-color: #FFFFFF;
+  border-radius: 30px;
 }
 
 @media (min-width: 1400px) {
@@ -123,7 +153,6 @@ body {
   }
   .course-sections {
     padding: 0px 72px;
-    height: calc(100vh - 106px);
     margin-top: 106px;
     gap: 50px;
   }
@@ -134,12 +163,22 @@ body {
   .course-sections .description-of-program-structure {
     padding: 16px 43px;
     height: 195px;
-    border-radius: 30px;
+  }
+  .description-of-program-structure ul {
+    gap: 35px;
+    height: 64px;
+  }
+  .description-of-program-structure ul li p{
+    height: 38px;
+    width: 359px;
+  }
+  .description-of-program-structure .icon {
+    width: 64px;
+    height: 64px;
   }
   .course-sections .target-audience {
     padding: 24px 43px 50px 43px;
     height: 575px;
-    border-radius: 30px;
     grid-column-gap: 43px
   }
   /* .target-audience .target-audience__content {
@@ -148,6 +187,18 @@ body {
     height: 381px;
     justify-content: space-around;
   } */
+  .course-sections .teachers-mentors {
+    padding: 24px 43px 50px 43px;
+    height: 912px;
+  }
+  .course-sections .tariffs {
+    height: 849px;
+    padding: 0px 43px 0px 43px;
+  }
+  footer {
+    height: 220px;
+    padding: 27px 72px;
+  }
 }
 
 @media (min-width: 1200px) and (max-width: 1399px) {
@@ -171,7 +222,6 @@ body {
   }
   .course-sections {
     padding: 0px 82px;
-    height: calc(100vh - 94px);
     margin-top: 94px;
     gap: 50px;
   }
@@ -182,13 +232,23 @@ body {
   .course-sections .description-of-program-structure {
     padding: 16px 37px;
     height: 294px;
-    border-radius: 30px;
   }
   .course-sections .target-audience {
     padding: 21px 37px 41px 37px;
     height: 574px;
-    border-radius: 30px;
     grid-column-gap: 43px
+  }
+  .course-sections .teachers-mentors {
+    padding: 21px 37px 41px 37px;
+    height: 1448px
+  }
+  .course-sections .tariffs {
+    height: 824px;
+    padding: 12px 37px 40px 37px;
+  }
+  footer {
+    height: 220px;
+    padding: 27px 82px;
   }
 }
 
@@ -213,7 +273,6 @@ body {
   }
   .course-sections {
     padding: 0px 44px;
-    height: calc(100vh - 81px);
     margin-top: 81px;
     gap: 37px;
   }
@@ -224,13 +283,23 @@ body {
   .course-sections .description-of-program-structure {
     padding: 16px 31px;
     height: 278px;
-    border-radius: 30px;
   }
   .course-sections .target-audience {
     padding: 21px 31px 41px 31px;
     height: 609px;
-    border-radius: 30px;
     grid-column-gap: 43px
+  }
+  .course-sections .teachers-mentors {
+    padding: 21px 31px 41px 31px;
+    height: 1602px;
+  }
+  .course-sections .tariffs {
+    height: 1778px;
+    padding: 12px 37px 40px 37px;
+  }
+  footer {
+    height: 220px;
+    padding: 27px 45px;
   }
 }
 
@@ -261,7 +330,6 @@ body {
   }
   .course-sections {
     padding: 0px 92px;
-    height: calc(100vh - 106px);
     margin-top: 106px;
     gap: 20px;
   }
@@ -272,13 +340,25 @@ body {
   .course-sections .description-of-program-structure {
     padding: 15px 31px;
     height: 252px;
-    border-radius: 30px;
   }
   .course-sections .target-audience {
     padding: 16px 31px 20px 31px;
     height: 844px;
     border-radius: 20px;
     grid-column-gap: 20px
+  }
+  .course-sections .teachers-mentors {
+    padding: 16px 31px 20px 31px;
+    height: 1165px;
+  }
+  .course-sections .tariffs {
+    height: 1370px;
+    padding: 12px 37px 20px 37px;
+    border-radius: 20px;
+  }
+  footer {
+    height: 330px;
+    padding: 25px 92px;
   }
 }
 
@@ -309,7 +389,6 @@ body {
   }
   .course-sections {
     padding: 0px 44px;
-    height: calc(100vh - 84px);
     margin-top: 84px;
     gap: 20px;
   }
@@ -327,6 +406,20 @@ body {
     height: 825px;
     border-radius: 20px;
     grid-column-gap: 20px
+  }
+  .course-sections .teachers-mentors {
+    padding: 16px 20px 20px 20px;
+    border-radius: 20px;
+    height: 1801px;
+  }
+  .course-sections .tariffs {
+    height: 1764px;
+    padding: 12px 20px 20px 20px;
+    border-radius: 20px;
+  }
+  footer {
+    height: 330px;
+    padding: 25px 44px;
   }
 }
 
@@ -357,7 +450,6 @@ body {
   }
   .course-sections {
     padding: 0px 11px;
-    height: calc(100vh - 84px);
     margin-top: 84px;
     gap: 20px;
   }
@@ -375,5 +467,19 @@ body {
     height: 1016px;
     border-radius: 20px;
     grid-column-gap: 20px
+  }
+  .course-sections .teachers-mentors {
+    padding: 16px 20px 20px 20px;
+    border-radius: 20px;
+    height: 1731px;
+  }
+  .course-sections .tariffs {
+    height: 1792px;
+    padding: 12px 20px 20px 20px;
+    border-radius: 20px;
+  }
+  footer {
+    height: 330px;
+    padding: 25px 11px;
   }
 }
