@@ -98,6 +98,7 @@ footer {
   width: 100%;
   border-radius: 30px;
   list-style-type: none;
+  justify-content: space-between;
 }
 
 .grid-block__description-of-program-structure .grid-item {
@@ -105,6 +106,9 @@ footer {
   align-items: center;
   gap: 21px;
   font-family: Finlandica-SemiBold;
+}
+.grid-block__description-of-program-structure .grid-item__text {
+  line-height: 1.2;
 }
 
 .course-sections .target-audience {
@@ -159,14 +163,12 @@ footer {
   .course-sections .grid-block__description-of-program-structure {
     padding: 16px 43px;
     height: 195px;
-    grid-template-columns: repeat(3, minmax(359px, 443px));
-  }
-  .grid-block__description-of-program-structure {
-    gap: 35px;
-    height: 64px;
+    grid-template-columns: 443px 311px 359px;
+    row-gap: 35px;
   }
   .grid-block__description-of-program-structure .grid-item {
     height: 64px;
+    min-width: 311px;
     max-width: 443px;
     font-size: 16px;
   }
@@ -230,6 +232,18 @@ footer {
   .course-sections .grid-block__description-of-program-structure {
     padding: 16px 37px;
     height: 294px;
+    grid-template-columns: 443px 359px;
+    row-gap: 35px;
+  }
+  .grid-block__description-of-program-structure .grid-item {
+    height: 64px;
+    min-width: 359px;
+    max-width: 443px;
+    font-size: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 64px;
+    height: 64px;
   }
   .course-sections .target-audience {
     padding: 21px 37px 41px 37px;
@@ -281,6 +295,21 @@ footer {
   .course-sections .grid-block__description-of-program-structure {
     padding: 16px 31px;
     height: 278px;
+    grid-template-columns: 443px 359px;
+    row-gap: 35px;
+  }
+  .grid-block__description-of-program-structure .grid-item {
+    height: 58px;
+    min-width: 359px;
+    max-width: 443px;
+    font-size: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 58px;
+    height: 58px;
+  }
+  .grid-item .grid-item__text {
+    max-height: 76px
   }
   .course-sections .target-audience {
     padding: 21px 31px 41px 31px;
@@ -338,6 +367,30 @@ footer {
   .course-sections .grid-block__description-of-program-structure {
     padding: 15px 31px;
     height: 252px;
+    grid-template-columns: 292px 276px;
+    row-gap: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item {
+    max-height: 276px;
+    max-width: 292px;
+    font-size: 16px;
+    max-height: 76px;
+    min-height: 57px;
+  }
+  .grid-block__description-of-program-structure .grid-item:nth-child(3) {
+    order: 2;
+  }
+  .grid-block__description-of-program-structure .grid-item:nth-child(4) {
+    order: 1;
+  }
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 48px;
+    height: 48px;
+  }
+  .grid-block__description-of-program-structure .grid-item__text {
+    min-height: 57px;
+    max-height: 76px;
+    line-height: 1.2;
   }
   .course-sections .target-audience {
     padding: 16px 31px 20px 31px;
@@ -397,7 +450,19 @@ footer {
   .course-sections .grid-block__description-of-program-structure {
     padding: 20px 20px;
     height: 408px;
-    border-radius: 20px;
+    row-gap: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item {
+    width: 476px;
+    height: 48px;
+    font-size: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 48px;
+    height: 48px;
+  }
+  .grid-block__description-of-program-structure .grid-item:nth-child(3) {
+    order: 2;
   }
   .course-sections .target-audience {
     padding: 16px 20px 20px 20px;
@@ -458,7 +523,21 @@ footer {
   .course-sections .grid-block__description-of-program-structure {
     padding: 20px 20px;
     height: 380px;
+    row-gap: 16px;
     border-radius: 20px;
+  }
+  .grid-block__description-of-program-structure .grid-item {
+    width: 328px;
+    min-height: 32px;
+    max-height: 57px;
+    font-size: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 32px;
+    height: 32px;
+  }
+  .grid-block__description-of-program-structure .grid-item:nth-child(3) {
+    order: 2;
   }
   .course-sections .target-audience {
     padding: 16px 20px 20px 20px;
