@@ -287,7 +287,6 @@ p {
   .course-sections .target-audience {
     padding: 24px 43px 50px 43px;
     gap: 43px;
-    height: 575px;
   }
    h1 {
     font-size: 64px;
@@ -430,7 +429,8 @@ p {
     gap: 81px;
   }
   .teachers-mentors .tile {
-    height: 537px;
+    min-height: 537px;
+    max-height: 573px;
   }
   .teachers-mentors .description p {
     font-size: 21px;
@@ -547,7 +547,8 @@ p {
     gap: 81px;
   }
   .teachers-mentors .tile {
-    height: 557px;
+    min-height: 557px;
+    max-height: 643px;
   }
   .teachers-mentors .description p {
     font-size: 21px;
@@ -620,16 +621,13 @@ p {
   }
   .course-sections .grid-block__description-of-program-structure {
     padding: 15px 31px;
-    height: 252px;
     grid-template-columns: 292px 276px;
     row-gap: 16px;
   }
   .grid-block__description-of-program-structure .grid-item {
-    max-height: 276px;
-    max-width: 292px;
     font-size: 16px;
-    max-height: 76px;
-    min-height: 57px;
+    max-width: auto;
+    min-width: 235px;
     gap: 16px;
   }
   .grid-block__description-of-program-structure .grid-item:nth-child(3) {
@@ -643,14 +641,11 @@ p {
     height: 48px;
   }
   .grid-block__description-of-program-structure .grid-item__text {
-    min-height: 57px;
-    max-height: 76px;
     line-height: 1.2;
     align-items: center;
   }
   .course-sections .target-audience {
     padding: 16px 31px 20px 31px;
-    height: 844px;
     border-radius: 20px;
     gap: 20px;
   }
@@ -658,7 +653,6 @@ p {
     font-size: 40px;
   }
   .target-audience .grid-block__target-audience-tiles {
-    height: 740px;
     gap: 28px;
   }
   .target-audience-tiles__top-row,
@@ -670,7 +664,7 @@ p {
     order: 2;
   }
   .target-audience__tile {
-    height: 164px;
+    min-height: 164px;
     padding: 16px 31px;
   }
   .target-audience__icon{
@@ -680,7 +674,40 @@ p {
   }
   .course-sections .teachers-mentors {
     padding: 16px 31px 20px 31px;
-    height: 1165px;
+    gap: 25px;
+  }
+  .teachers-mentors .tile {
+    min-height: 405px;
+  }
+  .teachers-mentors .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .teachers-mentors .description p {
+    font-size: 21px;
+    height: 107px;
+  }
+  .grid-block__mentor-tiles {
+    grid-template-columns: repeat(2, minmax(240.5px, 336.5px));
+    gap: 41px;
+  }
+  .grid-block__mentor-tiles .tile img {
+    width: 100%;
+    max-height: 200px;
+  }
+  .grid-block__mentor-tiles .description-frame {
+    padding: 15px 26px 35px 26px;
+    gap: 10px;
+  }
+  .grid-block__mentor-tiles .description-frame__stack {
+    gap: 7px;
+  }
+  .grid-block__mentor-tiles .description-frame h2,
+  .grid-block__mentor-tiles .description-frame__stack h1,
+  .grid-block__mentor-tiles .description-frame__stack p {
+    font-size: 20px;
   }
   .course-sections .tariffs {
     height: 1370px;
@@ -779,7 +806,42 @@ p {
   .course-sections .teachers-mentors {
     padding: 16px 20px 20px 20px;
     border-radius: 20px;
-    height: 1801px;
+    gap: 20px;
+    align-items: center;
+  }
+  .teachers-mentors .tile {
+    min-height: 357px;
+    max-height: 390px;
+  }
+  .teachers-mentors .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .teachers-mentors .description p {
+    font-size: 16px;
+    height: 98px;
+  }
+  .grid-block__mentor-tiles {
+    grid-template-columns: repeat(1, 410px);
+    gap: 41px;
+  }
+  .grid-block__mentor-tiles .tile img {
+    width: 100%;
+    max-height: 200px;
+  }
+  .grid-block__mentor-tiles .description-frame {
+    padding: 10px 26px 20px 26px;
+    gap: 10px;
+  }
+  .grid-block__mentor-tiles .description-frame__stack {
+    gap: 7px;
+  }
+  .grid-block__mentor-tiles .description-frame h2,
+  .grid-block__mentor-tiles .description-frame__stack h1,
+  .grid-block__mentor-tiles .description-frame__stack p {
+    font-size: 21px;
   }
   .course-sections .tariffs {
     height: 1764px;
@@ -913,7 +975,42 @@ p {
   .course-sections .teachers-mentors {
     padding: 16px 20px 20px 20px;
     border-radius: 20px;
-    height: 1731px;
+    align-items: center;
+    gap: 15px;
+  }
+  .teachers-mentors .tile {
+    min-height: 307px;
+    max-height: 380px;
+  }
+  .teachers-mentors .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .teachers-mentors .description p {
+    font-size: 16px;
+    height: 133px;
+  }
+  .grid-block__mentor-tiles {
+    grid-template-columns: repeat(1, 282px);
+    gap: 41px;
+  }
+  .grid-block__mentor-tiles .tile img {
+    width: 282px;
+    height: 175px;
+  }
+  .grid-block__mentor-tiles .description-frame {
+    padding: 10px 26px 20px 26px;
+    gap: 10px;
+  }
+  .grid-block__mentor-tiles .description-frame__stack {
+    gap: 7px;
+  }
+  .grid-block__mentor-tiles .description-frame h2,
+  .grid-block__mentor-tiles .description-frame__stack h1,
+  .grid-block__mentor-tiles .description-frame__stack p {
+    font-size: 16px;
   }
   .course-sections .tariffs {
     height: 1792px;
