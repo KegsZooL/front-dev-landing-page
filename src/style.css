@@ -225,6 +225,100 @@ footer {
   color: #000000;
 }
 
+.program {
+  display: flex;
+  flex-direction: column;
+  background-color: #D9D9D9;
+  border-radius: 30px;
+  gap: 40px;
+}
+
+.program .spoilers {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.program .spoiler {
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  padding: 15px 45px;
+} 
+
+.spoiler .spoiler-preview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spoiler-content {
+  display: none;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 25px;
+  font-family: Oswald-Light;
+  font-size: 16px;
+}
+
+.spoiler-content .content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.spoiler-content .content-grid h2 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.content-grid .content-item {
+  opacity: 0.5;
+}
+
+.content-grid .content-item__mobile {
+  display: none;
+}
+
+.content-grid .content-item ol {
+  padding-left: 0px;
+  list-style-position: inside;
+}
+
+.content-grid .content-item li {
+  margin-bottom: 3px;
+}
+
+.spoiler-preview .spoiler-toggle-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #D9D9D9;
+  border-radius: 5px;
+  font-family: Finlandica-SemiBold;
+  font-size: 24px;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+}
+
+.spoiler-preview__title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spoiler-preview__title h2 {
+  font-family: Finlandica-SemiBold;
+  font-size: 21px;
+}
+
+.spoiler-preview__title p {
+  font-family: Oswald-Light;
+  font-size: 16px;
+  opacity: 0.5;
+}
+
 .course-sections .tariffs {
   background-color: #FFFFFF;
   border-radius: 30px;
@@ -232,6 +326,7 @@ footer {
 
 h1 {
   text-align: center;
+  font-family: Finlandica-SemiBold;
 }
 
 h1,
@@ -315,23 +410,25 @@ p {
     height: 912px;
     gap: 95px;
   }
-  .teachers-mentors .tile {
-    height: 589px;
+
+  .teachers-mentors .description h1 {
+    max-width: 600px;
   }
+
   .teachers-mentors .description p {
     font-size: 21px;
     width: 416px;
-    height: 154px;
+    min-height: 154px;
   }
   .grid-block__mentor-tiles {
     grid-template-columns: repeat(4, 273px);
   }
   .grid-block__mentor-tiles .tile img {
-    width: 273px;
+    width: 100%;
     height: 248px;
   }
   .grid-block__mentor-tiles .description-frame {
-    padding: 15px 26px 0px 26px;
+    padding: 15px 26px 35px 26px;
     gap: 10px;
   }
   .grid-block__mentor-tiles .description-frame__stack {
@@ -341,6 +438,12 @@ p {
   .grid-block__mentor-tiles .description-frame__stack h1,
   .grid-block__mentor-tiles .description-frame__stack p {
     font-size: 21px;
+  }
+  .course-sections .program {
+    padding: 24px 43px 50px 43px;
+  }
+  .spoiler-content .content-title {
+    max-width: 636px;
   }
   .course-sections .tariffs {
     height: 849px;
@@ -442,7 +545,7 @@ p {
     gap: 41px;
   }
   .grid-block__mentor-tiles .tile img {
-    width: 501px;
+    width: 100%;
     height: 291px;
   }
   .grid-block__mentor-tiles .description-frame {
@@ -456,6 +559,12 @@ p {
   .grid-block__mentor-tiles .description-frame__stack h1,
   .grid-block__mentor-tiles .description-frame__stack p {
     font-size: 29px;
+  }
+  .course-sections .program {
+    padding: 24px 37px 40px 37px;
+  }
+  .spoiler-content .content-title {
+    max-width: 546px;
   }
   .course-sections .tariffs {
     height: 824px;
@@ -575,6 +684,12 @@ p {
   .grid-block__mentor-tiles .description-frame__stack p {
     font-size: 29px;
   }
+  .course-sections .program {
+    padding: 24px 37px 40px 37px;
+  }
+  .spoiler-content .content-title {
+    max-width: 456px;
+  }
   .course-sections .tariffs {
     height: 1778px;
     padding: 12px 37px 40px 37px;
@@ -621,7 +736,7 @@ p {
   }
   .course-sections .grid-block__description-of-program-structure {
     padding: 15px 31px;
-    grid-template-columns: 292px 276px;
+    grid-template-columns: repeat(2, minmax(200px, 350px));
     row-gap: 16px;
   }
   .grid-block__description-of-program-structure .grid-item {
@@ -709,6 +824,15 @@ p {
   .grid-block__mentor-tiles .description-frame__stack p {
     font-size: 20px;
   }
+  .course-sections .program {
+    padding: 16px 37px 20px 37px;
+  }
+  .spoiler-content .content-title {
+    max-width: 336px;
+  }
+  .spoiler .spoiler-preview__title p {
+    max-width: 350px;
+  }
   .course-sections .tariffs {
     height: 1370px;
     padding: 12px 37px 20px 37px;
@@ -760,7 +884,7 @@ p {
     row-gap: 16px;
   }
   .grid-block__description-of-program-structure .grid-item {
-    width: 476px;
+    width: 100%;
     height: 48px;
     font-size: 16px;
   }
@@ -843,6 +967,31 @@ p {
   .grid-block__mentor-tiles .description-frame__stack p {
     font-size: 21px;
   }
+  .content-grid .content-item {
+    display: none;
+  }
+  .content-grid .content-item__mobile {
+    display: flex;
+  }
+  .course-sections .program {
+    padding: 16px 20px 20px 20px;
+  }
+  .program .spoiler {
+    padding: 30px 20px;
+  }
+  .spoiler .spoiler-preview__title p {
+    max-width: 340px;
+  }
+  .spoiler-preview .spoiler-toggle-button {
+    width: 32px;
+    height: 32px;
+  }
+  .spoiler-content .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .spoiler-content .content-title {
+    max-width: 288px;
+  }
   .course-sections .tariffs {
     height: 1764px;
     padding: 12px 20px 20px 20px;
@@ -895,7 +1044,7 @@ p {
     border-radius: 20px;
   }
   .grid-block__description-of-program-structure .grid-item {
-    width: 328px;
+    width: 100%;
     min-height: 32px;
     max-height: 57px;
     font-size: 16px;
@@ -997,7 +1146,7 @@ p {
     gap: 41px;
   }
   .grid-block__mentor-tiles .tile img {
-    width: 282px;
+    width: 100%;
     height: 175px;
   }
   .grid-block__mentor-tiles .description-frame {
@@ -1011,6 +1160,31 @@ p {
   .grid-block__mentor-tiles .description-frame__stack h1,
   .grid-block__mentor-tiles .description-frame__stack p {
     font-size: 16px;
+  }
+  .content-grid .content-item {
+    display: none;
+  }
+  .content-grid .content-item__mobile {
+    display: flex;
+  }
+  .course-sections .program {
+    padding: 16px 20px 20px 20px;
+  }
+  .program .spoiler {
+    padding: 30px 20px;
+  }
+  .spoiler .spoiler-preview__title p {
+    max-width: 220px;
+  }
+  .spoiler-preview .spoiler-toggle-button {
+    width: 32px;
+    height: 32px;
+  }
+  .spoiler-content .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .spoiler-content .content-title {
+    max-width: 288px;
   }
   .course-sections .tariffs {
     height: 1792px;
