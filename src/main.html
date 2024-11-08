@@ -15,9 +15,9 @@
           <span class="company-name">BrainUP</span>
         </div>
         <ul class="navbar-menu">
-          <li><a href="#course">ДЛЯ КОГО КУРС</a></li>
-          <li><a href="#command">КОМАНДА</a></li>
-          <li><a href="#program">ПРОГРАММА</a></li>
+          <li><a href="#target-audience" class="smooth-goto">ДЛЯ КОГО КУРС</a></li>
+          <li><a href="#command" class="smooth-goto">КОМАНДА</a></li>
+          <li><a href="#program" class="smooth-goto">ПРОГРАММА</a></li>
         </ul>
         <div class = "button-menu">
             <span class = "line"></span>
@@ -28,52 +28,22 @@
   </nav>
   <div class="course-sections">
     
-    <div class="preview-of-course-structure">
-      <h1>TEXT</h1>
-    </div>
-    
-    <ul class="grid-block__description-of-program-structure">
-      <li class="grid-item">
-        <img src="resources/svg/clock-icon.svg" alt="clock-icon" class="grid-item__icon">
-        <div class="grid-item__text">
-          200 часов практики, лайвкодниг, вебинары, 
-          несколько хакатонов и 6+ проектов в портфолио
+    <!-- <div class="preview-of-course-structure">
+      <div class="description-of-the-proffesion-with-recording-elements">
+        <h2>Профессиия</h2>
+        <h1>Frontend - разработчик</h1>
+        <p>
+          Научитесь писать код для сайтов и веб-сервисов — с нуля за 9 месяцев. 
+          Сделаете первые шаги или смените направление в IT.
+        </p>
+        <div class="course-entry-structure">
+          
         </div>
-      </li>
-      <li class="grid-item">
-        <img src="resources/svg/journal-check-icon.svg" alt="journal-check-icon" class="grid-item__icon">
-        <div class="grid-item__text">
-          Диплом о профессиональной переподготовке и гослицензия
-        </div>
-      </li>
-      <li class="grid-item">
-        <img src="resources/svg/calendar-icon.svg" alt="calendar-icon" class="grid-item__icon">
-        <div class="grid-item__text">
-          Длительность обучения — 9 месяцев
-        </div>
-      </li>
-      <li class="grid-item">
-        <img src="resources/svg/chat-icon.svg" alt="chat-icon" class="grid-item__icon">
-        <div class="grid-item__text">
-          Развитие софтскилов для быстрой адаптации в 
-          IT и работы в команде разработки
-        </div>
-      </li>
-      <li class="grid-item">
-        <img src="resources/svg/briefcase-icon.svg" alt="briefcase-icon" class="grid-item__icon">
-        <div class="grid-item__text">
-          Помощь с поиском работы до 6 месяцев после выпуска
-        </div>
-      </li>
-      <li class="grid-item">
-        <img src="resources/svg/cash-stack-icon.svg" alt="cash-stack-icon" class="grid-item__icon">
-        <div class="grid-item__text">
-          После нашего курса студенты в среднем зарабатывают 150 000 ₽
-        </div>
-      </li>
-    </ul>
-    
-    <div class="target-audience">
+      </div>
+      <img src="/src/resources/svg/developer-picture.svg" alt="developer">
+    </div> -->
+  
+    <div class="target-audience" id="target-audience">
       <h1>Для кого этот курс</h1>
       <div class="grid-block__target-audience-tiles">
 
@@ -158,7 +128,6 @@
             </div>
           </div>
           
-
           <div class="target-audience-tile__mobile target-audience-tile-without-icon__mobile">
             <div class="target-audience-tile-mobile__description">
               <h2>Для фрилансеров</h2>
@@ -187,8 +156,49 @@
         </div>
       </div>
     </div>
+
+    <ul class="grid-block__description-of-program-structure">
+      <li class="grid-item">
+        <img src="resources/svg/clock-icon.svg" alt="clock-icon" class="grid-item__icon">
+        <div class="grid-item__text">
+          200 часов практики, лайвкодниг, вебинары, 
+          несколько хакатонов и 6+ проектов в портфолио
+        </div>
+      </li>
+      <li class="grid-item">
+        <img src="resources/svg/journal-check-icon.svg" alt="journal-check-icon" class="grid-item__icon">
+        <div class="grid-item__text">
+          Диплом о профессиональной переподготовке и гослицензия
+        </div>
+      </li>
+      <li class="grid-item">
+        <img src="resources/svg/calendar-icon.svg" alt="calendar-icon" class="grid-item__icon">
+        <div class="grid-item__text">
+          Длительность обучения — 9 месяцев
+        </div>
+      </li>
+      <li class="grid-item">
+        <img src="resources/svg/chat-icon.svg" alt="chat-icon" class="grid-item__icon">
+        <div class="grid-item__text">
+          Развитие софтскилов для быстрой адаптации в 
+          IT и работы в команде разработки
+        </div>
+      </li>
+      <li class="grid-item">
+        <img src="resources/svg/briefcase-icon.svg" alt="briefcase-icon" class="grid-item__icon">
+        <div class="grid-item__text">
+          Помощь с поиском работы до 6 месяцев после выпуска
+        </div>
+      </li>
+      <li class="grid-item">
+        <img src="resources/svg/cash-stack-icon.svg" alt="cash-stack-icon" class="grid-item__icon">
+        <div class="grid-item__text">
+          После нашего курса студенты в среднем зарабатывают 150 000 ₽
+        </div>
+      </li>
+    </ul>
         
-    <div class="teachers-mentors">
+    <div class="teachers-mentors" id="command">
 
       <div class="description">
           <h1>Преподаватели и менторы</h1>
@@ -247,7 +257,7 @@
 
     </div>
 
-    <div class="program">
+    <div class="program" id="program">
       <h1>Программа курса</h1>
       <div class="spoilers">
         <div class="spoiler">
@@ -706,9 +716,8 @@
             <h2>brainup@mail.ru</h2>
             <p>г. Челябинск, улица Российская, дом 110, корпус 1, этаж 1</p>
           </div>
-          <div>
+          <div class="telegram">
             <h2>Свяжитесь с нами через Telegram</h2>
-            <p>Нажмите на ссылку ниже, чтобы отправить сообщение.</p>
             <a href="https://t.me/brainUp" target="_blank">Написать в Telegram</a>
           </div>
       </div>
