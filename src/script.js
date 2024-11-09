@@ -28,3 +28,10 @@ const smoothLinks = document.querySelectorAll('.smooth-goto');
 smoothLinks.forEach(link => {
   link.addEventListener('click', scrollToSection);
 });
+
+function toggleMenu() {
+  const menu = document.querySelector('.hamburger-menu');
+  const buttonMenu = document.querySelector('.button-menu');
+  menu.classList.toggle('show');
+  buttonMenu.classList.toggle('open');
+}
