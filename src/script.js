@@ -10,22 +10,21 @@ document.querySelectorAll('.spoiler-toggle-button').forEach(button => {
   });
 });
 
-// function scrollToSection() {
-//   const element = document.getElementById("target-audience");
-//   const offset = 500;
+function scrollToSection(event) {
+  event.preventDefault();
 
-//   window.scrollTo({
-//       top: element.getBoundingClientRect().top + window.scrollY + offset,
-//       behavior: "smooth"
-//   });
-// }
+  const targetId = event.target.getAttribute("href").substring(1);
+  const element = document.getElementById(targetId);
+  
+  const offset = -100;
 
-document.querySelectorAll('.smooth-goto').forEach(href => {
-  const offset = 50;
-    window.scrollTo({
-      top: href.getBoundingClientRect().top + window.scrollY + offset,
-      behavior: "smooth"
+  window.scrollTo({
+    top: element.getBoundingClientRect().top + window.scrollY + offset,
+    behavior: "smooth"
   });
-}
-)
+}       
 
+const smoothLinks = document.querySelectorAll('.smooth-goto');
+smoothLinks.forEach(link => {
+  link.addEventListener('click', scrollToSection);
+});

@@ -494,7 +494,232 @@ p {
   text-decoration: underline;
 }
 
-@media (min-width: 1400px) {
+
+@media (min-width: 1500px) {
+  .navbar {
+    height: 86px;
+    padding: 3px 72px;
+  }
+  
+  .company-name {
+    font-size: 2.5vw;
+  }
+  
+  .navbar-menu li a {
+    font-size: 1.3vw;
+  }
+
+  .logo {
+    margin-right: 24px;
+    height: 120%;
+  }
+  
+  .button-menu {
+    display: none;
+  }
+
+  .course-sections {
+    padding: 0px 72px;
+    margin-top: 106px;
+    gap: 50px;
+  }
+
+  .course-sections .preview-of-course-structure {
+    height: 38vh;
+    padding: 24px 0px 50px 43px;
+  }
+
+  .course-sections .grid-block__description-of-program-structure {
+    padding: min(32px, 32px) min(43px, 5vw);
+    grid-template-columns: repeat(3, 30vw);
+    gap: 48px;
+  }
+
+  .grid-block__description-of-program-structure .grid-item {
+    font-size: 1.0vw;
+  }
+
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 4vw;
+    height: 4vw;
+  }
+
+  .course-sections .target-audience {
+    padding: 24px 43px 50px 43px;
+    gap: min(72px, 5vw);
+  }
+
+  h1 {
+    font-size: 4vw;
+  }
+
+  .target-audience .grid-block__target-audience-tiles {
+    gap: 2vw;
+  }
+
+  .target-audience-tiles__top-row {
+    grid-template-columns: minmax(25vw, 45%) 50%;
+  }
+
+  .target-audience-tiles__bottom-row {
+    grid-template-columns: 50% minmax(25vw, 45%);
+  }
+
+  .target-audience__tile {
+    padding: 1.5vw 2.5vw;
+  }
+
+  .target-audience__icon {
+    margin-left: 1vw;
+    height: 9vw;
+  }
+
+  .course-sections .teachers-mentors {
+    padding: 24px 43px 50px 43px;
+    gap: min(145px, 5vw);
+  }
+
+  .teachers-mentors .description h1 {
+    max-width: 600px;
+  }
+
+  .teachers-mentors .description p {
+    font-size: 1.4vw;
+    width: 35vw;
+    min-height: 10vh;
+  }
+
+  .grid-block__mentor-tiles {
+    grid-template-columns: repeat(4, 20vw);
+  }
+
+  .grid-block__mentor-tiles .tile img {
+    width: 100%;
+    height: 45%;
+  }
+
+  .grid-block__mentor-tiles .description-frame {
+    padding: 15px 26px 35px 26px;
+    gap: 15px;
+  }
+
+  .grid-block__mentor-tiles .description-frame__stack {
+    gap: 14px;
+  }
+   
+  .target-audience-tile__description h2 {
+    font-size: 1.4vw;
+  }
+  .target-audience-tile__description p {
+    font-size: 1.2vw;
+  }
+  .grid-block__mentor-tiles .description-frame h2,
+  .grid-block__mentor-tiles .description-frame__stack h1,
+  .grid-block__mentor-tiles .description-frame__stack p {
+    font-size: 1.4vw;
+  }
+
+  .course-sections .program {
+    padding: 24px 43px 50px 43px;
+    gap: min(72px, 5vw);
+  }
+
+  .program .spoilers {
+    gap: 30px;
+  }
+  .program .spoiler {
+    padding: 25px 45px;
+  }
+
+  .spoiler-preview .spoiler-toggle-button {
+    width: 64px;
+    height: 64px;
+    font-size: 1.4vw;
+  }
+
+  .spoiler-content .content-title {
+    width: 50%;
+  }
+
+  .spoiler-content .content-grid h2 {
+    font-size: 1.0vw;
+  }
+
+  .spoiler-preview__title h2 {
+    font-size: 1.4vw;
+  }
+
+  .spoiler-preview__title p {
+    font-size: 1.0vw;
+  }
+
+  .spoiler-content {
+    font-size: 1.0vw;
+  }
+
+  .course-sections .tariffs {
+    gap: min(72px, 5vw);
+    padding: 12px 43px 40px 43px;
+  }
+
+  .tariff-tile .tariff-description h2 {
+    font-size: 1.4vw;
+  }
+
+  .grid-block__tariff-tiles {
+    gap: 47px;
+  }
+
+  .grid-block__tariff-tiles .tariff-tile {
+    padding: 40px 15px;
+    gap: 40px;
+  }
+
+  .tariff-tile .tariff-features {
+    padding: 0px 25px;
+    gap: 19px;
+  }
+
+  .tariff-features .feature p {
+    font-size: 1.0vw;
+  }
+
+  .tariff-features .feature img {
+    height: 2vw;
+    width: 2vw;
+  }
+
+  .tariff-tile .tariff-description {
+    padding: 19px 20px;
+    gap: 32px;
+  }
+
+  .tariff-description .record-button {
+    border-radius: 20px;
+    min-height: 64px;
+    font-size: 1.4vw;
+  }
+
+  .tariff-description .tariff-price-block {
+    gap: 13px;
+  }
+  .tariff-price-block .discount {
+    min-height: 64px;
+    min-width: 96px;
+    font-size: 1.0vw;
+  }
+  .tariff-price-block .payment-plan,
+  .prices .original-price,
+  .prices .discount-price {
+    font-size: 1.0vw;
+  }
+
+  footer {
+    padding: 2vw 5vw;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1499px) {
   .navbar {
     height: 86px;
     padding: 3px 72px;
