@@ -10,6 +10,8 @@
 
 html {
   scroll-behavior: smooth;
+  margin:0;
+  background:#17282F;
 }
 
 body {
@@ -75,7 +77,13 @@ footer p {
 
 .navbar-menu li a {
   color: #F8F9FA;
+  text-decoration: none;
   font-weight: 200;
+  transition: transform 0.4 all ease;
+}
+
+.navbar-menu li a:hover {
+  color: #FABB1E;
 }
 
 .button-menu {
@@ -701,11 +709,11 @@ p {
 
   .course-sections {
     padding: 0px 72px;
-    margin-top: 106px;
     gap: 50px;
   }
-
+  
   .course-sections .preview-of-course-structure {
+    margin-top: 106px;
     padding: 24px 43px 50px 43px;
   }
   .course-entry-structure {
@@ -938,10 +946,10 @@ p {
   }
   .course-sections {
     padding: 0px 72px;
-    margin-top: 106px;
     gap: 50px;
   }
   .course-sections .preview-of-course-structure{
+    margin-top: 106px;
     height: 638px;
     padding: 24px 0px 50px 43px;
   }
@@ -1100,11 +1108,11 @@ p {
   }
   .course-sections {
     padding: 0px 82px;
-    margin-top: 94px;
     gap: 50px;
   }
   .course-sections .preview-of-course-structure{
     height: 614px;
+    margin-top: 94px;
     padding: 21px 0px 41px 37px;
   }
   .description-of-the-proffesion-with-recording-elements {
@@ -1264,10 +1272,10 @@ p {
   }
   .course-sections {
     padding: 0px 44px;
-    margin-top: 81px;
     gap: 37px;
   }
   .course-sections .preview-of-course-structure{
+    margin-top: 81px;
     height: 530px;
     padding: 21px 0px 41px 31px;
   }
@@ -1467,10 +1475,10 @@ p {
   }
   .course-sections {
     padding: 0px 92px;
-    margin-top: 106px;
     gap: 20px;
   }
   .course-sections .preview-of-course-structure{
+    margin-top: 106px;
     padding: 24px 0px 24px 31px;
   }
   .icon-developer {
@@ -1596,9 +1604,6 @@ p {
   .course-sections .program {
     padding: 16px 37px 20px 37px;
   }
-  .spoiler-content .content-title {
-    max-width: 336px;
-  }
   .spoiler .spoiler-preview__title p {
     max-width: 350px;
   }
@@ -1676,10 +1681,10 @@ p {
   }
   .course-sections {
     padding: 0px 44px;
-    margin-top: 84px;
     gap: 20px;
   }
   .course-sections .preview-of-course-structure{
+    margin-top: 84px;
     padding: 16px 0px 20px 20px;
   }
   .icon-developer {
@@ -1749,7 +1754,6 @@ p {
     font-size: 36px;
   }
   .target-audience .grid-block__target-audience-tiles {
-    height: 716px;
     gap: 28px;
   }
   .target-audience-tiles__top-row,
@@ -1762,7 +1766,6 @@ p {
   }
   .target-audience__tile {
     min-height: 140px;
-    max-height: 188px;
     padding: 16px;
     border-radius: 20px;
   }
@@ -1792,11 +1795,11 @@ p {
     gap: 41px;
   }
   .grid-block__mentor-tiles .tile {
-    min-height: 500px;
+    min-height: 550px;
   }
   .grid-block__mentor-tiles .tile img {
     width: 100%;
-    max-height: 300px;
+    max-height: 350px;
   }
   .grid-block__mentor-tiles .description-frame {
     padding: 10px 26px 20px 26px;
@@ -1826,14 +1829,11 @@ p {
     max-width: 340px;
   }
   .spoiler-preview .spoiler-toggle-button {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
   }
   .spoiler-content .content-grid {
     grid-template-columns: 1fr;
-  }
-  .spoiler-content .content-title {
-    max-width: 288px;
   }
   .course-sections .tariffs {
     padding: 12px 20px 20px 20px;
@@ -1914,10 +1914,10 @@ p {
   
   .course-sections {
     padding: 0px 11px;
-    margin-top: 84px;
     gap: 20px;
   }
   .course-sections .preview-of-course-structure{
+    margin-top: 84px;
     padding: 16px 0px 20px 20px;
   }
   .icon-developer {
@@ -2067,11 +2067,11 @@ p {
     gap: 41px;
   }
   .grid-block__mentor-tiles .tile {
-    min-height: 400px;
+    min-height: 450px;
   }
   .grid-block__mentor-tiles .tile img {
     width: 100%;
-    height: 220px;
+    height: 280px;
   }
   .grid-block__mentor-tiles .description-frame {
     padding: 10px 26px 20px 26px;
@@ -2101,14 +2101,11 @@ p {
     max-width: 220px;
   }
   .spoiler-preview .spoiler-toggle-button {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
   }
   .spoiler-content .content-grid {
     grid-template-columns: 1fr;
-  }
-  .spoiler-content .content-title {
-    max-width: 288px;
   }
   .course-sections .tariffs {
     padding: 12px 20px 20px 20px;
