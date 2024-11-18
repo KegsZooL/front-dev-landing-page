@@ -1,0 +1,39 @@
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+.history
+.ionide
+
+### WordPress ###
+/wp-admin/
+/wp-content/backups-dup-lite/
+/wp-content/languages
+/wp-content/plugins/
+/wp-content/themes/twenty*/
+/wp-content/upgrade/
+/wp-content/uploads/
+/wp-content/index.php
+/wp-includes/*.php
+/wp-includes/*.txt
+/wp-includes/*.html
+/wp-content/plugins/index.php
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
+wp-config.php
+*.log
+/.htaccess
