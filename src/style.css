@@ -1880,7 +1880,7 @@ p {
   }
 }
 
-@media (max-width: 575px) {
+@media (min-width: 375px) and (max-width: 575px) {
   .navbar {
     height: 64px;
     padding: 3px 11px;
@@ -1954,7 +1954,6 @@ p {
     gap: 45px;
   }
   .description-of-the-proffesion-with-recording-elements__mobile img {
-    max-width: 250px;
     height: 100%;
   }
   .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
@@ -1988,7 +1987,6 @@ p {
     font-size: 36px;
   }
   .target-audience .grid-block__target-audience-tiles {
-    height: 916px;
     gap: 20px;
   }
   .target-audience-tiles__top-row,
@@ -2097,6 +2095,275 @@ p {
   }
   .spoiler .spoiler-preview__title p {
     max-width: 220px;
+  }
+  .spoiler-preview .spoiler-toggle-button {
+    width: 48px;
+    height: 48px;
+  }
+  .spoiler-content .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .course-sections .tariffs {
+    padding: 12px 20px 20px 20px;
+    border-radius: 20px;
+    gap: 30px;
+  }
+  .tariffs h1 {
+    text-align: center;
+  }
+  .tariffs .grid-block__tariff-tiles {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .grid-block__tariff-tiles .tariff-tile {
+    padding: 25px 5px;
+    gap: 20px;
+  }
+  .tariff-tile .tariff-features {
+    padding: 0px 20px;
+    gap: 19px;
+  }
+  .tariff-features .feature img {
+    height: 32px;
+    width: 32px;
+  }
+  .tariff-tile .tariff-description {
+    padding: 20px 20px;
+    gap: 15px;
+  }
+  .tariff-tile .tariff-description h2 {
+    font-size: 21px;
+  }
+  .tariff-description .tariff-price-block {
+    gap: 15px;
+  }
+  .tariff-description .record-button {
+    font-size: 21px;
+    height: 48px;
+  }
+  .tariff-price-block .discount {
+    min-height: 32px;
+    min-width: 48px;
+  }
+  .price-info .prices {
+    gap: 10px;
+  }
+  footer {
+    padding: 25px 11px;
+  }
+}
+
+@media (max-width: 374px) {
+  .navbar {
+    height: 64px;
+    padding: 3px 11px;
+  }
+  .company-name {
+    font-size: 20px;
+  }
+  .logo {
+    margin-right: 10px;
+    height: 40px;
+    width: 52px;
+  }
+  .navbar-menu {
+    display: none;
+  }
+  .button-menu {
+    width: 64px;
+    height: 24px;
+  }
+  .button-menu .line {
+    width: 64px;
+    height: 4px;
+    border-radius: 5px;
+  }
+  .menu-item {
+    padding: 5px 20px;
+    font-size: 20px;
+  }
+  
+  .course-sections {
+    padding: 0px 11px;
+    gap: 20px;
+  }
+  .course-sections .preview-of-course-structure{
+    margin-top: 84px;
+    padding: 16px 0px 20px 20px;
+  }
+  .icon-developer {
+    display: none;
+  } 
+  .description-of-the-proffesion-with-recording-elements {
+    display: none;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile {
+    display: flex;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
+    display: flex;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile h1 {
+    font-size: 29px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile h2 {
+    font-size: 21px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile p {
+    font-size: 21px;
+  }
+  .course-entry-structure .course-entry-button {
+    font-size: 26px;
+  }
+  .course-entry-structure h2,
+  .course-entry-structure p {
+    font-size: 16px;
+  }
+  .course-entry-structure .course-entry-button {
+    min-height: 51px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile .top-content__description {
+    max-width: 231px;
+    gap: 45px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile img {
+    height: 100%;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
+    padding-right: 9px;
+  }
+  .course-sections .grid-block__description-of-program-structure {
+    padding: 20px 20px;
+    row-gap: 35px;
+    border-radius: 20px;
+  }
+  .grid-block__description-of-program-structure .grid-item {
+    width: 100%;
+    min-height: 32px;
+    font-size: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 48px;
+    height: 48px;
+  }
+  .grid-block__description-of-program-structure .grid-item:nth-child(3) {
+    order: 2;
+  }
+  .course-sections .target-audience {
+    padding: 16px 20px 20px 20px;
+    border-radius: 20px;
+    gap: 20px
+  }
+  h1 {
+    font-size: 36px;
+  }
+  .target-audience .grid-block__target-audience-tiles {
+    gap: 20px;
+  }
+  .target-audience-tiles__top-row,
+  .target-audience-tiles__bottom-row {
+    grid-template-columns: repeat(1, 100%);
+    gap: 28px;
+  }
+  .target-audience-tiles__bottom-row .target-audience__tile:nth-child(1) {
+    order: 2;
+  }
+  .target-audience__tile {
+    display: none;
+  }
+
+  .target-audience-tile__mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    color: #FFFFFF;
+    background-color: #17282F;
+    border-radius: 20px;
+    gap: 11px;
+  }
+
+  .target-audience-tile-without-icon__mobile {
+    color: #000000;
+    background-color: #7DAEA3;
+    width: 100%;
+  }
+
+  .target-audience-tile-mobile__title {
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .target-audience-tile__mobile h2 {
+    font-size: 21px;
+  }
+
+  .target-audience-tile-without-icon__mobile h2 {
+    width: auto;
+    margin-bottom: 7px;
+  }
+
+  .target-audience-tile-mobile__description p {
+    font-family: Oswald-Light;
+    font-size: 16px;
+  }
+  img {
+    width: 103px;
+    height: 64px;
+  }
+  .course-sections .teachers-mentors {
+    padding: 16px 20px 20px 20px;
+    border-radius: 20px;
+    align-items: center;
+    gap: 15px;
+  }
+  .teachers-mentors .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .teachers-mentors .description p {
+    font-size: 16px;
+    height: 133px;
+  }
+  .grid-block__mentor-tiles {
+    grid-template-columns: repeat(1, 100%);
+    gap: 41px;
+  }
+  .grid-block__mentor-tiles .tile {
+    min-height: 370px;
+  }
+  .grid-block__mentor-tiles .tile img {
+    width: 100%;
+    height: 200px;
+  }
+  .grid-block__mentor-tiles .description-frame {
+    padding: 10px 26px 20px 26px;
+    gap: 10px;
+  }
+  .grid-block__mentor-tiles .description-frame__stack {
+    gap: 7px;
+  }
+  .grid-block__mentor-tiles .description-frame h2,
+  .grid-block__mentor-tiles .description-frame__stack h1,
+  .grid-block__mentor-tiles .description-frame__stack p {
+    font-size: 16px;
+  }
+  .content-grid .content-item {
+    display: none;
+  }
+  .content-grid .content-item__mobile {
+    display: flex;
+  }
+  .course-sections .program {
+    padding: 16px 20px 20px 20px;
+  }
+  .program .spoiler {
+    padding: 20px 30px;
+  }
+  .spoiler .spoiler-preview__title p {
+    max-width: 150px;
   }
   .spoiler-preview .spoiler-toggle-button {
     width: 48px;

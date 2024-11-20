@@ -6,2158 +6,2425 @@ Version: 1.0
 */
 
 @font-face {
-    font-family: Oswald-Light;
-    src: url(resources/font/Oswald/Oswald-Light.ttf);
-  }
-  
-  @font-face {
-    font-family: Finlandica-SemiBold;
-    src: url(resources/font/Finlandica/Finlandica-SemiBold.ttf);
-  }
-  
-  html {
-    scroll-behavior: smooth;
-    margin:0;
-    background:#17282F;
-  }
-  
-  body {
-    background-color: #F5F5F5;
-  }
-  
-  footer {
-    background-color: #17282F;
-    color: #FFFFFF;
-  }
-  
-  footer h2 {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-family: Oswald-Light;
-  }
-  footer p {
-    font-family: Oswald-Light;
-    opacity: 0.75;
-  }
-  
+  font-family: Oswald-Light;
+  src: url(resources/font/Oswald/Oswald-Light.ttf);
+}
+
+@font-face {
+  font-family: Finlandica-SemiBold;
+  src: url(resources/font/Finlandica/Finlandica-SemiBold.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
+  margin:0;
+  background:#17282F;
+}
+
+body {
+  background-color: #F5F5F5;
+}
+
+footer {
+  background-color: #17282F;
+  color: #FFFFFF;
+}
+
+footer h2 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: Oswald-Light;
+}
+footer p {
+  font-family: Oswald-Light;
+  opacity: 0.75;
+}
+
+.navbar {
+  background-color: #17282F;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 7px 0px;
+  font-family: Finlandica-SemiBold;
+}
+
+.company-name {
+  color: #F8F9FA;
+  font-weight: 600;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: Oswald-Light;
+}
+
+.navbar-menu li{
+  display: inline-block;
+  margin-left: 28px;
+}
+
+.navbar-menu li a {
+  color: #F8F9FA;
+  text-decoration: none;
+  font-weight: 200;
+  transition: transform 0.4 all ease;
+}
+
+.navbar-menu li a:hover {
+  color: #FABB1E;
+}
+
+.button-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button-menu .line {
+  display: block;
+  background-color: #D9D9D9;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), 
+              opacity 0.3s ease;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.button-menu.open .line:nth-child(1),
+.button-menu.open .line:nth-child(3) {
+  transform: scaleX(0);
+}
+
+.button-menu.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #17282F;
+  font-family: 'Finlandica-SemiBold';
+  color: #FFFFFF;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8) rotate(-2deg);
+  filter: blur(10px);
+  transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+              opacity 0.7s ease,
+              visibility 0.7s,
+              filter 0.7s ease,
+              box-shadow 0.7s ease;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.3);
+}
+
+.hamburger-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) rotate(0);
+  filter: blur(0);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-item {
+  padding: 10px 20px;
+  font-size: 48px;
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+
+.menu-item-inscribed {
+  border:2px solid #F25553;
+  border-radius: 30px;
+}
+
+.menu-item:hover {
+  color: #FABB1E;
+}
+
+.close-menu {
+  font-size: 36px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.course-sections {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.course-sections .preview-of-course-structure {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #D9D9D9;
+  border-radius: 30px;
+  width: 100%;
+}
+
+.course-sections .preview-of-course-structure h1{
+  text-align: left;
+}
+
+.preview-of-course-structure img {
+  max-width: 634px;
+}
+
+.description-of-the-proffesion-with-recording-elements {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.description-of-the-proffesion-with-recording-elements h1 {
+  justify-content: start;
+}
+.description-of-the-proffesion-with-recording-elements h2,
+.description-of-the-proffesion-with-recording-elements h1 {
+  font-family: Finlandica-SemiBold;
+}
+
+.description-of-the-proffesion-with-recording-elements p {
+  font-family: Oswald-Light;
+  font-size: 28px;
+}
+
+.course-entry-structure {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.course-entry-structure .discount-expiration-date {
+  background-color: #000000;
+  color: #FFFFFF;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.course-entry-structure .course-entry-button,
+.course-entry-structure .start-of-date-to-stream {
+  background-color: #E78A4E;
+  color: #FFFFFF;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.course-entry-structure .course-entry-button {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  align-items: center;
+  transition: background-color 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.course-entry-structure .course-entry-button:hover {
+  background-color: #000000;
+  transform: scale(1.05);
+}
+
+.course-entry-structure .course-entry-button,
+.course-entry-structure h2 {
+  font-family: Finlandica-SemiBold;
+}
+
+.course-entry-structure__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.course-entry-structure__content .start-of-date-to-stream,
+.course-entry-structure__content .discount-expiration-date {
+  padding: 7px 0px 7px 14px;
+}
+
+.description-of-the-proffesion-with-recording-elements__mobile {
+  display: none;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.description-of-the-proffesion-with-recording-elements__mobile .top-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 254px;
+}
+
+.description-of-the-proffesion-with-recording-elements__mobile .top-content__description {
+  display: flex;
+  flex-direction: column;
+  max-width: 317px;
+  gap: 15px;
+}
+
+.description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-right: 31px;
+}
+
+.description-of-the-proffesion-with-recording-elements__mobile h2 {
+  font-family: Finlandica-SemiBold;
+}
+.description-of-the-proffesion-with-recording-elements__mobile p {
+  font-family: Oswald-Light;
+}
+
+.course-entry-structure h2 {
+  font-family: Finlandica-SemiBold;
+}
+
+.description-of-the-proffesion-with-recording-elements__mobile img {
+  width: 100%;
+}
+
+.course-sections .grid-block__description-of-program-structure {
+  display: grid;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-radius: 30px;
+  list-style-type: none;
+  justify-content: space-between;
+  margin-bottom: 0px;
+}
+
+.grid-block__description-of-program-structure .grid-item {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  font-family: Finlandica-SemiBold;
+}
+.grid-block__description-of-program-structure .grid-item__text {
+  display: flex;
+  line-height: 1.2;
+}
+
+.course-sections .target-audience {
+  display: flex;
+  background-color: #D9D9D9;
+  flex-direction: column;
+  border-radius: 30px;
+  font-family: Finlandica-SemiBold;
+}
+
+.target-audience .grid-block__target-audience-tiles {
+  display: grid;
+}
+
+.target-audience-tiles__top-row,
+.target-audience-tiles__bottom-row {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+
+.target-audience__tile {
+  display: flex;
+  color: #FFFFFF;
+  background-color: #17282F;
+  border-radius: 30px;
+}
+
+.target-audience-tile__mobile {
+  display: none;
+}
+
+.target-audience__tile-without-icon {
+  color: #000000;
+  background-color: #7DAEA3;
+}
+
+.target-audience-tile__description {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.target-audience-tile__description h2 {
+  font-family: Finlandica-SemiBold;
+  font-size: 21px;
+}
+
+.target-audience-tile__description p {
+  font-family: Oswald-Light;
+  font-size: 16px;
+}
+
+.course-sections .teachers-mentors {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+}
+
+.teachers-mentors .description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.teachers-mentors .description h1 {
+  text-align: left;
+}
+
+.teachers-mentors .description p {
+  font-family: Oswald-Light;
+  display: flex;
+  align-items: center;
+}
+
+.teachers-mentors .grid-block__mentor-tiles {
+  display: grid;
+  justify-content: space-between;
+}
+
+.grid-block__mentor-tiles .tile {
+  background-color: #D9D9D9;
+  border-radius: 30px;
+}
+
+.grid-block__mentor-tiles .tile img {
+  border-radius: 30px 30px 0px 0px;
+}
+
+.grid-block__mentor-tiles .description-frame,
+.grid-block__mentor-tiles .description-frame__stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-block__mentor-tiles .description-frame__stack h1{
+  text-align: start;
+}
+
+.grid-block__mentor-tiles .description-frame h2 {
+  font-family: Oswald-Light;
+  color: #F25553;
+}
+
+.description-frame__stack h1 {
+  font-family: Finlandica-SemiBold;
+  color: #000000;
+}
+
+.description-frame__stack p {
+  font-family: Oswald-Light;
+  color: #000000;
+}
+
+.program {
+  display: flex;
+  flex-direction: column;
+  background-color: #D9D9D9;
+  border-radius: 30px;
+  gap: 40px;
+}
+
+.program .spoilers {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.program .spoiler {
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  padding: 15px 45px;
+} 
+
+.spoiler .spoiler-preview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spoiler-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease, opacity 0.7s ease;
+  margin-top: 25px;
+  font-family: Oswald-Light;
+  font-size: 16px;
+}
+
+.spoiler-content .content-title {
+  margin-bottom: 30px;
+}
+
+.spoiler-content.show {
+  max-height: 1500px;
+  opacity: 1;
+}
+.spoiler-content .content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.spoiler-content .content-grid h2 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.content-grid .content-item {
+  opacity: 0.5;
+}
+
+.content-grid .content-item__mobile {
+  display: none;
+}
+
+.content-grid .content-item ol {
+  padding-left: 0px;
+  list-style-position: inside;
+}
+
+.content-grid .content-item li {
+  margin-bottom: 3px;
+}
+
+.spoiler-preview .spoiler-toggle-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #D9D9D9;
+  border-radius: 5px;
+  font-family: Finlandica-SemiBold;
+  font-size: 24px;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+}
+
+.spoiler-preview__title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spoiler-preview__title h2 {
+  font-family: Finlandica-SemiBold;
+  font-size: 21px;
+}
+
+.spoiler-preview__title p {
+  font-family: Oswald-Light;
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.course-sections .tariffs {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+}
+
+.tariffs .grid-block__tariff-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-block__tariff-tiles .tariff-tile {
+  display: flex;
+  flex-direction: column;
+  background-color: #D9D9D9;
+  border-radius: 30px;
+}
+
+.tariff-tile .tariff-features {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.tariff-features .feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-family: Finlandica-SemiBold;
+}
+
+.tariff-tile .tariff-description {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+}
+
+.tariff-tile .tariff-description h2 {
+  font-family: Finlandica-SemiBold;
+  font-size: 21px;
+}
+
+.tariff-description .tariff-price-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.tariff-description .record-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #E78A4E;
+  font-family: Finlandica-SemiBold;
+  font-size: 21px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.record-button:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.tariff-price-block .price-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-info .prices {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 13px;
+}
+
+.prices .original-price,
+.prices .discount-price {
+  font-family: Finlandica-SemiBold;
+  font-size: 16px;
+}
+
+.prices .original-price {
+  opacity: 0.5;
+}
+
+.price-info .discount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #D9D9D9;
+  border-radius: 30px;
+  font-family: Finlandica-SemiBold;
+  font-size: 16px;
+}
+
+.price-info .big-discount {
+  background-color: #FABB1E;
+}
+
+.tariff-price-block .payment-plan {
+  font-family: Oswald-Light;
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+h1 {
+  text-align: center;
+  font-family: Finlandica-SemiBold;
+}
+
+h1,
+h2,
+p {
+  margin-bottom: 0;
+}
+
+
+.telegram a {
+  color: #FFFFFF;
+  opacity: 0.75;
+}
+
+.telegram a:hover {
+  color: #FABB1E;
+  text-decoration: underline;
+}
+
+
+@media (min-width: 1500px) {
   .navbar {
-    background-color: #17282F;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .navbar-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding: 7px 0px;
-    font-family: Finlandica-SemiBold;
+    height: 86px;
+    padding: 3px 72px;
   }
   
   .company-name {
-    color: #F8F9FA;
-    font-weight: 600;
-  }
-  
-  .navbar-menu {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    font-family: Oswald-Light;
-  }
-  
-  .navbar-menu li{
-    display: inline-block;
-    margin-left: 28px;
+    font-size: 2.5vw;
   }
   
   .navbar-menu li a {
-    color: #F8F9FA;
-    text-decoration: none;
-    font-weight: 200;
-    transition: transform 0.4 all ease;
+    font-size: 1.3vw;
   }
-  
-  .navbar-menu li a:hover {
-    color: #FABB1E;
+
+  .logo {
+    margin-right: 24px;
+    height: 120%;
   }
   
   .button-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    cursor: pointer;
+    display: none;
   }
-  
-  .button-menu .line {
-    display: block;
-    background-color: #D9D9D9;
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), 
-                opacity 0.3s ease;
-    transform-origin: center;
-    will-change: transform, opacity;
-  }
-  
-  .button-menu.open .line:nth-child(1),
-  .button-menu.open .line:nth-child(3) {
-    transform: scaleX(0);
-  }
-  
-  .button-menu.open .line:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger-menu {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #17282F;
-    font-family: 'Finlandica-SemiBold';
-    color: #FFFFFF;
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0.8) rotate(-2deg);
-    filter: blur(10px);
-    transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-                opacity 0.7s ease,
-                visibility 0.7s,
-                filter 0.7s ease,
-                box-shadow 0.7s ease;
-    box-shadow: 0 0 0px rgba(0, 0, 0, 0.3);
-  }
-  
-  .hamburger-menu.show {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1) rotate(0);
-    filter: blur(0);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  }
-  
-  .menu-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .menu-item {
-    padding: 10px 20px;
-    font-size: 48px;
-    text-decoration: none;
-    color: #FFFFFF;
-    transition: all 0.3s ease;
-  }
-  
-  .menu-item-inscribed {
-    border:2px solid #F25553;
-    border-radius: 30px;
-  }
-  
-  .menu-item:hover {
-    color: #FABB1E;
-  }
-  
-  .close-menu {
-    font-size: 36px;
-    margin-top: 40px;
-    cursor: pointer;
-  }
-  
+
   .course-sections {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 50px;
+    padding: 0px 72px;
+    gap: 50px;
   }
   
   .course-sections .preview-of-course-structure {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #D9D9D9;
-    border-radius: 30px;
-    width: 100%;
+    margin-top: 106px;
+    padding: 24px 43px 50px 43px;
   }
-  
-  .course-sections .preview-of-course-structure h1{
-    text-align: left;
-  }
-  
-  .preview-of-course-structure img {
-    max-width: 634px;
-  }
-  
-  .description-of-the-proffesion-with-recording-elements {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-  .description-of-the-proffesion-with-recording-elements h1 {
-    justify-content: start;
-  }
-  .description-of-the-proffesion-with-recording-elements h2,
-  .description-of-the-proffesion-with-recording-elements h1 {
-    font-family: Finlandica-SemiBold;
-  }
-  
-  .description-of-the-proffesion-with-recording-elements p {
-    font-family: Oswald-Light;
-    font-size: 28px;
-  }
-  
   .course-entry-structure {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
+    gap: 21px;
   }
-  
-  .course-entry-structure .discount-expiration-date {
-    background-color: #000000;
-    color: #FFFFFF;
-    border-radius: 10px;
-    width: 100%;
+  .course-entry-button {
+    font-size: 2vw;
   }
-  
-  .course-entry-structure .course-entry-button,
-  .course-entry-structure .start-of-date-to-stream {
-    background-color: #E78A4E;
-    color: #FFFFFF;
-    border-radius: 10px;
-    width: 100%;
+  .description-of-the-proffesion-with-recording-elements {
+    width: 40%;
+    gap: 50px;
   }
-  
+  .description-of-the-proffesion-with-recording-elements p {
+    font-size: 1.4vw;
+  }
+  .preview-of-course-structure img{
+    max-width: 900px;
+  }
   .course-entry-structure .course-entry-button {
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    text-decoration: none;
-    align-items: center;
-    transition: background-color 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+   height: 4.5vw; 
   }
-  
-  .course-entry-structure .course-entry-button:hover {
-    background-color: #000000;
-    transform: scale(1.05);
+  .course-sections .grid-block__description-of-program-structure {
+    padding: min(32px, 32px) min(43px, 5vw);
+    grid-template-columns: repeat(3, 30vw);
+    gap: 48px;
   }
-  
-  .course-entry-structure .course-entry-button,
-  .course-entry-structure h2 {
-    font-family: Finlandica-SemiBold;
+
+  .grid-block__description-of-program-structure .grid-item {
+    font-size: 1.0vw;
   }
-  
-  .course-entry-structure__content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 8px;
+
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 4vw;
+    height: 4vw;
   }
-  
-  .course-entry-structure__content .start-of-date-to-stream,
-  .course-entry-structure__content .discount-expiration-date {
-    padding: 7px 0px 7px 14px;
+
+  .course-sections .target-audience {
+    padding: 24px 43px 50px 43px;
+    gap: min(72px, 5vw);
   }
-  
-  .description-of-the-proffesion-with-recording-elements__mobile {
-    display: none;
-    flex-direction: column;
-    gap: 36px;
+
+  h1 {
+    font-size: 4vw;
   }
-  
-  .description-of-the-proffesion-with-recording-elements__mobile .top-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    max-height: 254px;
+
+  .target-audience .grid-block__target-audience-tiles {
+    gap: 2vw;
   }
-  
-  .description-of-the-proffesion-with-recording-elements__mobile .top-content__description {
-    display: flex;
-    flex-direction: column;
-    max-width: 317px;
+
+  .target-audience-tiles__top-row {
+    grid-template-columns: minmax(25vw, 45%) 50%;
+  }
+
+  .target-audience-tiles__bottom-row {
+    grid-template-columns: 50% minmax(25vw, 45%);
+  }
+
+  .target-audience__tile {
+    padding: 1.5vw 2.5vw;
+  }
+
+  .target-audience__icon {
+    margin-left: 1vw;
+    height: 9vw;
+  }
+
+  .course-sections .teachers-mentors {
+    padding: 24px 43px 50px 43px;
+    gap: min(145px, 5vw);
+  }
+
+  .teachers-mentors .description h1 {
+    max-width: 600px;
+  }
+
+  .teachers-mentors .description p {
+    font-size: 1.4vw;
+    width: 35vw;
+    min-height: 10vh;
+  }
+
+  .grid-block__mentor-tiles {
+    grid-template-columns: repeat(4, 20vw);
+  }
+
+  .grid-block__mentor-tiles .tile img {
+    width: 100%;
+    height: 45%;
+  }
+
+  .grid-block__mentor-tiles .description-frame {
+    padding: 15px 26px 35px 26px;
     gap: 15px;
   }
-  
-  .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
-    display: flex;
-    flex-direction: column;
+
+  .grid-block__mentor-tiles .description-frame__stack {
+    gap: 14px;
+  }
+   
+  .target-audience-tile__description h2 {
+    font-size: 1.4vw;
+  }
+  .target-audience-tile__description p {
+    font-size: 1.2vw;
+  }
+  .grid-block__mentor-tiles .description-frame h2,
+  .grid-block__mentor-tiles .description-frame__stack h1,
+  .grid-block__mentor-tiles .description-frame__stack p {
+    font-size: 1.4vw;
+  }
+
+  .course-sections .program {
+    padding: 24px 43px 50px 43px;
+    gap: min(72px, 5vw);
+  }
+
+  .program .spoilers {
+    gap: 30px;
+  }
+  .program .spoiler {
+    padding: 25px 45px;
+  }
+
+  .spoiler-preview .spoiler-toggle-button {
+    width: 64px;
+    height: 64px;
+    font-size: 1.4vw;
+  }
+
+  .spoiler-content .content-title {
+    width: 50%;
+  }
+
+  .spoiler-content .content-grid h2 {
+    font-size: 1.0vw;
+  }
+
+  .spoiler-preview__title h2 {
+    font-size: 1.4vw;
+  }
+
+  .spoiler-preview__title p {
+    font-size: 1.0vw;
+  }
+
+  .spoiler-content {
+    font-size: 1.0vw;
+  }
+
+  .course-sections .tariffs {
+    gap: min(72px, 5vw);
+    padding: 12px 43px 40px 43px;
+  }
+
+  .tariff-tile .tariff-description h2 {
+    font-size: 1.4vw;
+  }
+
+  .grid-block__tariff-tiles {
+    gap: 47px;
+  }
+
+  .grid-block__tariff-tiles .tariff-tile {
+    padding: 40px 15px;
+    gap: 40px;
+  }
+
+  .tariff-tile .tariff-features {
+    padding: 0px 25px;
+    gap: 19px;
+  }
+
+  .tariff-features .feature p {
+    font-size: 1.0vw;
+  }
+
+  .tariff-features .feature img {
+    height: 2vw;
+    width: 2vw;
+  }
+
+  .tariff-tile .tariff-description {
+    padding: 19px 20px;
     gap: 32px;
-    padding-right: 31px;
   }
-  
-  .description-of-the-proffesion-with-recording-elements__mobile h2 {
-    font-family: Finlandica-SemiBold;
+
+  .tariff-description .record-button {
+    border-radius: 20px;
+    min-height: 64px;
+    font-size: 1.4vw;
   }
-  .description-of-the-proffesion-with-recording-elements__mobile p {
-    font-family: Oswald-Light;
+
+  .tariff-description .tariff-price-block {
+    gap: 13px;
   }
-  
-  .course-entry-structure h2 {
-    font-family: Finlandica-SemiBold;
+  .tariff-price-block .discount {
+    min-height: 64px;
+    min-width: 96px;
+    font-size: 1.0vw;
   }
-  
-  .description-of-the-proffesion-with-recording-elements__mobile img {
-    width: 100%;
+  .tariff-price-block .payment-plan,
+  .prices .original-price,
+  .prices .discount-price {
+    font-size: 1.0vw;
   }
-  
-  .course-sections .grid-block__description-of-program-structure {
-    display: grid;
-    background-color: #FFFFFF;
-    width: 100%;
-    border-radius: 30px;
-    list-style-type: none;
-    justify-content: space-between;
-    margin-bottom: 0px;
+
+  footer {
+    padding: 2vw 5vw;
   }
-  
-  .grid-block__description-of-program-structure .grid-item {
-    display: flex;
-    align-items: center;
-    gap: 21px;
-    font-family: Finlandica-SemiBold;
+}
+
+@media (min-width: 1400px) and (max-width: 1499px) {
+  .navbar {
+    height: 86px;
+    padding: 3px 72px;
   }
-  .grid-block__description-of-program-structure .grid-item__text {
-    display: flex;
-    line-height: 1.2;
+  .company-name {
+    font-size: 40px;
   }
-  
-  .course-sections .target-audience {
-    display: flex;
-    background-color: #D9D9D9;
-    flex-direction: column;
-    border-radius: 30px;
-    font-family: Finlandica-SemiBold;
+  .navbar-menu li a {
+    font-size: 25px;
   }
-  
-  .target-audience .grid-block__target-audience-tiles {
-    display: grid;
+  .logo {
+    margin-right: 24px;
+    height: 66px;
+    width: 88px;
   }
-  
-  .target-audience-tiles__top-row,
-  .target-audience-tiles__bottom-row {
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
-  }
-  
-  .target-audience__tile {
-    display: flex;
-    color: #FFFFFF;
-    background-color: #17282F;
-    border-radius: 30px;
-  }
-  
-  .target-audience-tile__mobile {
+  .button-menu {
     display: none;
   }
+  .course-sections {
+    padding: 0px 72px;
+    gap: 50px;
+  }
+  .course-sections .preview-of-course-structure{
+    margin-top: 106px;
+    height: 638px;
+    padding: 24px 0px 50px 43px;
+  }
+  .description-of-the-proffesion-with-recording-elements {
+    max-width: 431px;
+  }
+  .course-entry-structure .course-entry-button {
+    font-size: 30px;
+  }
+  .course-entry-structure h2 {
+    font-size: 20px;
+  }
+  .course-entry-structure p {
+    font-size: 15px;
+  }
+  .course-entry-structure .course-entry-button {
+    min-height: 60px;
+  }
+  .course-sections .grid-block__description-of-program-structure {
+    padding: 16px 43px;
+    height: 195px;
+    grid-template-columns: 443px 311px 359px;
+    row-gap: 35px;
+  }
+  .grid-block__description-of-program-structure .grid-item {
+    height: 64px;
+    min-width: 311px;
+    max-width: 443px;
+    font-size: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 64px;
+    height: 64px;
+  }
+  .course-sections .target-audience {
+    padding: 24px 43px 50px 43px;
+    gap: 43px;
+  }
+   h1 {
+    font-size: 64px;
+  }
+  .target-audience .grid-block__target-audience-tiles {
+    gap: 41px;
+  }
+  .target-audience-tiles__top-row {
+    grid-template-columns: minmax(526px, 45%) 50%;
+   }
+   .target-audience-tiles__bottom-row {
+    grid-template-columns: 50% minmax(526px, 45%);
+   }
+  .target-audience__tile {
+    padding: 30px 43px;
+  }
+  .target-audience__icon{
+    margin-left: 17px;
+    width: 126px;
+    height: 119px;
+  }
+  .course-sections .teachers-mentors {
+    padding: 24px 43px 50px 43px;
+    height: 912px;
+    gap: 95px;
+  }
+
+  .teachers-mentors .description h1 {
+    max-width: 600px;
+  }
+
+  .teachers-mentors .description p {
+    font-size: 21px;
+    width: 416px;
+    min-height: 154px;
+  }
+  .grid-block__mentor-tiles {
+    grid-template-columns: repeat(4, 273px);
+  }
+  .grid-block__mentor-tiles .tile img {
+    width: 100%;
+    height: 248px;
+  }
+  .grid-block__mentor-tiles .description-frame {
+    padding: 15px 26px 35px 26px;
+    gap: 10px;
+  }
+  .grid-block__mentor-tiles .description-frame__stack {
+    gap: 14px;
+  }
+  .grid-block__mentor-tiles .description-frame h2,
+  .grid-block__mentor-tiles .description-frame__stack h1,
+  .grid-block__mentor-tiles .description-frame__stack p {
+    font-size: 21px;
+  }
+  .course-sections .program {
+    padding: 24px 43px 50px 43px;
+  }
+  .spoiler-content .content-title {
+    max-width: 636px;
+  }
+  .course-sections .tariffs {
+    gap: 50px;
+    padding: 12px 43px 40px 43px;
+  }
+  .grid-block__tariff-tiles {
+    gap: 47px;
+  }
+  .grid-block__tariff-tiles .tariff-tile {
+    padding: 25px 5px;
+    gap: 20px;
+  }
+  .tariff-tile .tariff-features {
+    padding: 0px 25px;
+    gap: 19px;
+  }
+  .tariff-features .feature img {
+    height: 24px;
+    width: 24px;
+  }
+  .tariff-tile .tariff-description {
+    padding: 19px 20px;
+    gap: 21px;
+  }
+  .tariff-description .record-button {
+    border-radius: 10px;
+    min-height: 47px;
+  }
+  .tariff-description .tariff-price-block {
+    gap: 13px;
+  }
+  .tariff-price-block .discount {
+    min-height: 32px;
+    min-width: 56px;
+  }
+  footer {
+    padding: 27px 72px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .navbar {
+    height: 74px;
+    padding: 3px 82px;
+  }
+  .company-name {
+    font-size: 40px;
+  }
+  .navbar-menu li a {
+    font-size: 25px;
+  }
+  .logo {
+    margin-right: 24px;
+    height: 66px;
+    width: 88px;
+  }
+  .button-menu {
+    display: none;
+  }
+  .course-sections {
+    padding: 0px 82px;
+    gap: 50px;
+  }
+  .course-sections .preview-of-course-structure{
+    height: 614px;
+    margin-top: 94px;
+    padding: 21px 0px 41px 37px;
+  }
+  .description-of-the-proffesion-with-recording-elements {
+    max-width: 431px;
+  }
+  .course-entry-structure .course-entry-button {
+    font-size: 30px;
+  }
+  .course-entry-structure h2 {
+    font-size: 20px;
+  }
+  .course-entry-structure p {
+    font-size: 15px;
+  }
+  .course-entry-structure .course-entry-button {
+    min-height: 60px;
+  }
+  .preview-of-course-structure img {
+    max-width: 543px;
+  }
+  .course-sections .grid-block__description-of-program-structure {
+    padding: 16px 37px;
+    height: 294px;
+    grid-template-columns: 443px 359px;
+    row-gap: 35px;
+  }
+  .grid-block__description-of-program-structure .grid-item {
+    height: 64px;
+    min-width: 359px;
+    max-width: 443px;
+    font-size: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 64px;
+    height: 64px;
+  }
+  .course-sections .target-audience {
+    padding: 21px 37px 41px 37px;
+    gap: 43px;
+  }
+  h1 {
+    font-size: 64px;
+  }
+  .target-audience .grid-block__target-audience-tiles {
+    gap: 28px;
+  }
+   .target-audience-tiles__top-row {
+    grid-template-columns: minmax(451px, 45%) 50%;
+   }
+   .target-audience-tiles__bottom-row {
+    grid-template-columns: 50% minmax(451px, 45%);
+   }
+  .target-audience__tile {
+    /* height: 182px; */
+    padding: 25px 37px;
+  }
+  .target-audience__icon{
+    margin-left: 12px;
+    width: 117px;
+    height: 110px;
+  }
+  .course-sections .teachers-mentors {
+    padding: 21px 37px 41px 37px;
+    gap: 81px;
+  }
+  .teachers-mentors .description p {
+    font-size: 21px;
+    width: 451px;
+    height: 154px;
+  }
+  .grid-block__mentor-tiles {
+    grid-template-columns: repeat(2, minmax(45%, 47%));
+    gap: 41px;
+  }
+  .grid-block__mentor-tiles .tile img {
+    width: 100%;
+    height: 291px;
+  }
+  .grid-block__mentor-tiles .description-frame {
+    padding: 15px 26px 35px 26px;
+    gap: 10px;
+  }
+  .grid-block__mentor-tiles .description-frame__stack {
+    gap: 7px;
+  }
+  .grid-block__mentor-tiles .description-frame h2,
+  .grid-block__mentor-tiles .description-frame__stack h1,
+  .grid-block__mentor-tiles .description-frame__stack p {
+    font-size: 29px;
+  }
+  .course-sections .program {
+    padding: 24px 37px 40px 37px;
+  }
+  .spoiler-content .content-title {
+    max-width: 546px;
+  }
+  .course-sections .tariffs {
+    padding: 12px 37px 40px 37px;
+    gap: 50px;
+  }
+  .grid-block__tariff-tiles {
+    gap: 25px;
+  }
+  .grid-block__tariff-tiles .tariff-tile {
+    padding: 25px 5px;
+    gap: 20px;
+  }
+  .tariff-tile .tariff-features {
+    padding: 0px 20px;
+    gap: 19px;
+  }
+  .tariff-features .feature img {
+    height: 24px;
+    width: 24px;
+  }
+  .tariff-tile .tariff-description {
+    padding: 19px 15px;
+    gap: 21px;
+  }
+  .tariff-description .record-button {
+    border-radius: 10px;
+    min-height: 47px;
+  }
+  .tariff-description .tariff-price-block {
+    gap: 13px;
+  }
+  .tariff-price-block .discount {
+    min-height: 32px;
+    min-width: 56px;
+  }
+  .price-info .prices {
+    gap: 8px;
+  }
+  footer {
+    padding: 27px 82px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar {
+    height: 61px;
+    padding: 3px 44px;
+  }
+  .company-name {
+    font-size: 33px;
+  }
+  .navbar-menu li a {
+    font-size: 21px;
+  }
+  .logo {
+    margin-right: 24px;
+    height: 54px;
+    width: 71px;
+  }
+  .button-menu {
+    display: none;
+  }
+  .course-sections {
+    padding: 0px 44px;
+    gap: 37px;
+  }
+  .course-sections .preview-of-course-structure{
+    margin-top: 81px;
+    padding: 21px 0px 41px 31px;
+  }
+  .description-of-the-proffesion-with-recording-elements {
+    max-width: 377px;
+    gap: 21px;
+  }
+  .description-of-the-proffesion-with-recording-elements h1 {
+    font-size: 53px;
+  }
+  .description-of-the-proffesion-with-recording-elements h2 {
+    font-size: 25px;
+  }
+  .description-of-the-proffesion-with-recording-elements p {
+    font-size: 23px;
+  }
+  .course-entry-structure .course-entry-button {
+    font-size: 25px;
+  }
+  .course-entry-structure h2 {
+    font-size: 18px;
+  }
+  .course-entry-structure p {
+    font-size: 14px;
+  }
+  .course-entry-structure .course-entry-button {
+    min-height: 50px;
+  }
+  .preview-of-course-structure img {
+    max-width: 456px;
+  }
+  .course-sections .grid-block__description-of-program-structure {
+    padding: 16px 31px;
+    height: 278px;
+    grid-template-columns: 443px 359px;
+    row-gap: 35px;
+  }
+  .grid-block__description-of-program-structure .grid-item {
+    height: 58px;
+    min-width: 359px;
+    max-width: 443px;
+    font-size: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 58px;
+    height: 58px;
+  }
+  .grid-item .grid-item__text {
+    max-height: 76px
+  }
+  .course-sections .target-audience {
+    padding: 21px 31px 41px 31px;
+    gap: 43px
+  }
+  h1 {
+    font-size: 53px;
+  }
+  .target-audience .grid-block__target-audience-tiles {
+    gap: 28px;
+  }
+  .target-audience-tiles__top-row {
+    grid-template-columns: minmax(376px, 45%) 50%;
+   }
+   .target-audience-tiles__bottom-row {
+    grid-template-columns: 50% minmax(376px, 45%);
+   }
+  .target-audience__tile {
+    padding: 25px 31px;
+  }
+  .target-audience__icon{
+    margin-left: 17px;
+    width: 100px;
+    height: 92px;
+  }
+  .course-sections .teachers-mentors {
+    padding: 21px 31px 41px 31px;
+    gap: 81px;
+  }
+  .teachers-mentors .tile {
+    min-height: 557px;
+    max-height: 643px;
+  }
+  .teachers-mentors .description h1 {
+    max-width: 600px;
+  }
+  .teachers-mentors .description p {
+    font-size: 21px;
+    width: 376px;
+    height: 154px;
+  }
+  .grid-block__mentor-tiles {
+    grid-template-columns: repeat(2, minmax(400px, 47%));
+    gap: 41px;
+  }
+  .grid-block__mentor-tiles .tile img {
+    width: 100%;
+    height: 291px;
+  }
+  .grid-block__mentor-tiles .description-frame {
+    padding: 15px 26px 35px 26px;
+    gap: 10px;
+  }
+  .grid-block__mentor-tiles .description-frame__stack {
+    gap: 7px;
+  }
+  .grid-block__mentor-tiles .description-frame h2,
+  .grid-block__mentor-tiles .description-frame__stack h1,
+  .grid-block__mentor-tiles .description-frame__stack p {
+    font-size: 29px;
+  }
+  .course-sections .program {
+    padding: 24px 37px 40px 37px;
+  }
+  .spoiler-content .content-title {
+    max-width: 456px;
+  }
+  .course-sections .tariffs {
+    padding: 12px 37px 40px 37px;
+    gap: 40px;
+  }
+  .tariffs .grid-block__tariff-tiles {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .grid-block__tariff-tiles .tariff-tile {
+    padding: 25px 5px;
+    gap: 20px;
+  }
+  .tariff-tile .tariff-features {
+    padding: 0px 20px;
+    gap: 19px;
+  }
+  .tariff-features .feature {
+    font-size: 21px;
+  }
+  .tariff-features .feature img {
+    height: 40px;
+    width: 40px;
+  }
+  .tariff-tile .tariff-description {
+    padding: 10px 15px 19px 15px;
+    gap: 15px;
+  }
+  .tariff-tile .tariff-description h2 {
+    font-size: 32px;
+  }
+  .tariff-description .tariff-price-block {
+    gap: 13px;
+  }
+  .tariff-price-block .payment-plan,
+  .price-info .discount,
+  .prices .discount-price,
+  .prices .original-price {
+    font-size: 21px;
+  }
+  .tariff-description .record-button {
+    font-size: 48px;
+    max-height: 65px;
+  }
+  .tariff-price-block .discount {
+    min-height: 41px;
+    min-width: 90px;
+  }
+  .price-info .prices {
+    gap: 13px;
+  }
+  footer {
+    padding: 27px 45px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar {
+    height: 86px;
+    padding: 0px 92px;
+  }
+  .company-name {
+    font-size: 36px;
+  }
+  .logo {
+    margin-right: 24px;
+    height: 66px;
+    width: 88px;
+  }
+  .navbar-menu {
+    display: none;
+  }
+  .button-menu {
+    width: 76px;
+    height: 43px;
+  }
+  .button-menu .line {
+    width: 76px;
+    height: 7px;
+    border-radius: 5px;
+  }
+  .course-sections {
+    padding: 0px 92px;
+    gap: 20px;
+  }
+  .course-sections .preview-of-course-structure{
+    margin-top: 106px;
+    padding: 24px 0px 24px 31px;
+  }
+  .icon-developer {
+    display: none;
+  } 
+  .description-of-the-proffesion-with-recording-elements {
+    display: none;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile {
+    display: flex;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
+    display: flex;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile h1 {
+    font-size: 55px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile h2 {
+    font-size: 32px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile p {
+    font-size: 32px;
+  }
+  .course-entry-structure .course-entry-button {
+    font-size: 48px;
+  }
+  .course-entry-structure h2,
+  .course-entry-structure p {
+    font-size: 24px;
+  }
+  .course-entry-structure .course-entry-button {
+    min-height: 84px;
+  }
+  .course-sections .grid-block__description-of-program-structure {
+    padding: 15px 31px;
+    grid-template-columns: repeat(2, minmax(200px, 350px));
+    row-gap: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item {
+    font-size: 16px;
+    width: 90%;
+    gap: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item:nth-child(3) {
+    order: 2;
+  }
+  .grid-block__description-of-program-structure .grid-item:nth-child(4) {
+    order: 1;
+  }
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 48px;
+    height: 48px;
+  }
+  .grid-block__description-of-program-structure .grid-item__text {
+    line-height: 1.2;
+    align-items: center;
+  }
+  .course-sections .target-audience {
+    padding: 16px 31px 20px 31px;
+    border-radius: 20px;
+    gap: 20px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  .target-audience .grid-block__target-audience-tiles {
+    gap: 28px;
+  }
+  .target-audience-tiles__top-row,
+  .target-audience-tiles__bottom-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .target-audience-tiles__bottom-row .target-audience__tile:nth-child(1) {
+    order: 2;
+  }
+  .target-audience__tile {
+    min-height: 164px;
+    padding: 16px 31px;
+  }
+  .target-audience__icon{
+    margin-left: 17px;
+    width: 128px;
+    height: 128px;
+  }
+  .course-sections .teachers-mentors {
+    padding: 16px 31px 20px 31px;
+    gap: 25px;
+  }
+  .teachers-mentors .tile {
+    min-height: 405px;
+  }
+  .teachers-mentors .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .teachers-mentors .description p {
+    font-size: 21px;
+    height: 107px;
+  }
+  .grid-block__mentor-tiles {
+    grid-template-columns: repeat(2, minmax(240.5px, 336.5px));
+    gap: 41px;
+  }
+  .grid-block__mentor-tiles .tile img {
+    width: 100%;
+    max-height: 200px;
+  }
+  .grid-block__mentor-tiles .description-frame {
+    padding: 15px 26px 35px 26px;
+    gap: 10px;
+  }
+  .grid-block__mentor-tiles .description-frame__stack {
+    gap: 7px;
+  }
+  .grid-block__mentor-tiles .description-frame h2,
+  .grid-block__mentor-tiles .description-frame__stack h1,
+  .grid-block__mentor-tiles .description-frame__stack p {
+    font-size: 20px;
+  }
+  .course-sections .program {
+    padding: 16px 37px 20px 37px;
+  }
+  .spoiler .spoiler-preview__title p {
+    max-width: 350px;
+  }
+  .course-sections .tariffs {
+    padding: 12px 37px 20px 37px;
+    border-radius: 20px;
+    gap: 40px;
+  }
+  .tariffs .grid-block__tariff-tiles {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .grid-block__tariff-tiles .tariff-tile {
+    padding: 25px 5px;
+    gap: 20px;
+  }
+  .tariff-tile .tariff-features {
+    padding: 0px 20px;
+    gap: 19px;
+  }
+  .tariff-features .feature img {
+    height: 32px;
+    width: 32px;
+  }
+  .tariff-tile .tariff-description {
+    padding: 20px 20px;
+    gap: 15px;
+  }
+  .tariff-tile .tariff-description h2 {
+    font-size: 21px;
+  }
+  .tariff-description .tariff-price-block {
+    gap: 15px;
+  }
+  .tariff-description .record-button {
+    font-size: 32px;
+    max-height: 48px;
+  }
+  .tariff-price-block .discount {
+    min-height: 43px;
+    min-width: 68px;
+  }
+  .price-info .prices {
+    gap: 13px;
+  }
+  footer {
+    padding: 25px 92px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .navbar {
+    height: 64px;
+    padding: 3px 44px;
+  }
+  .company-name {
+    font-size: 20px;
+  }
+  .logo {
+    margin-right: 10px;
+    height: 40px;
+    width: 52px;
+  }
+  .navbar-menu {
+    display: none;
+  }
+  .button-menu {
+    width: 74px;
+    height: 24px;
+  }
+  .button-menu .line {
+    width: 74px;
+    height: 4px;
+    border-radius: 5px;
+  }
+  .course-sections {
+    padding: 0px 44px;
+    gap: 20px;
+  }
+  .course-sections .preview-of-course-structure{
+    margin-top: 84px;
+    padding: 16px 0px 20px 20px;
+  }
+  .icon-developer {
+    display: none;
+  } 
+  .description-of-the-proffesion-with-recording-elements {
+    display: none;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile {
+    display: flex;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
+    display: flex;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile h1 {
+    font-size: 40px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile h2 {
+    font-size: 28px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile p {
+    font-size: 28px;
+  }
+  .course-entry-structure .course-entry-button {
+    font-size: 40px;
+  }
+  .course-entry-structure h2,
+  .course-entry-structure p {
+    font-size: 21px;
+  }
+  .course-entry-structure .course-entry-button {
+    min-height: 68px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile .top-content__description {
+    max-width: 231px;
+    gap: 45px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile img {
+    max-width: 350px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
+    padding-right: 20px;
+  }
+  .course-sections .grid-block__description-of-program-structure {
+    padding: 20px 20px;
+    height: 408px;
+    row-gap: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 48px;
+    height: 48px;
+  }
+  .grid-block__description-of-program-structure .grid-item:nth-child(3) {
+    order: 2;
+  }
+  .course-sections .target-audience {
+    padding: 16px 20px 20px 20px;
+    border-radius: 20px;
+    gap: 20px
+  }
+  h1 {
+    font-size: 36px;
+  }
+  .target-audience .grid-block__target-audience-tiles {
+    gap: 28px;
+  }
+  .target-audience-tiles__top-row,
+  .target-audience-tiles__bottom-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .target-audience-tiles__bottom-row .target-audience__tile:nth-child(1) {
+    order: 2;
+  }
+  .target-audience__tile {
+    min-height: 140px;
+    padding: 16px;
+    border-radius: 20px;
+  }
+  .target-audience__icon{
+    margin-left: 24px;
+    width: 128px;
+    height: 118px;
+  }
+  .course-sections .teachers-mentors {
+    padding: 16px 20px 20px 20px;
+    border-radius: 20px;
+    gap: 20px;
+    align-items: center;
+  }
+  .teachers-mentors .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .teachers-mentors .description p {
+    font-size: 16px;
+    height: 98px;
+  }
+  .grid-block__mentor-tiles {
+    grid-template-columns: repeat(1, 100%);
+    gap: 41px;
+  }
+  .grid-block__mentor-tiles .tile {
+    min-height: 550px;
+  }
+  .grid-block__mentor-tiles .tile img {
+    width: 100%;
+    max-height: 350px;
+  }
+  .grid-block__mentor-tiles .description-frame {
+    padding: 10px 26px 20px 26px;
+    gap: 10px;
+  }
+  .grid-block__mentor-tiles .description-frame__stack {
+    gap: 7px;
+  }
+  .grid-block__mentor-tiles .description-frame h2,
+  .grid-block__mentor-tiles .description-frame__stack h1,
+  .grid-block__mentor-tiles .description-frame__stack p {
+    font-size: 21px;
+  }
+  .content-grid .content-item {
+    display: none;
+  }
+  .content-grid .content-item__mobile {
+    display: flex;
+  }
+  .course-sections .program {
+    padding: 16px 20px 20px 20px;
+  }
+  .program .spoiler {
+    padding: 30px 20px;
+  }
+  .spoiler .spoiler-preview__title p {
+    max-width: 340px;
+  }
+  .spoiler-preview .spoiler-toggle-button {
+    width: 48px;
+    height: 48px;
+  }
+  .spoiler-content .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .course-sections .tariffs {
+    padding: 12px 20px 20px 20px;
+    border-radius: 20px;
+    gap: 20px;
+  }
+  .tariffs .grid-block__tariff-tiles {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .grid-block__tariff-tiles .tariff-tile {
+    padding: 25px 5px;
+    gap: 20px;
+  }
+  .tariff-tile .tariff-features {
+    padding: 0px 20px;
+    gap: 19px;
+  }
+  .tariff-features .feature img {
+    height: 32px;
+    width: 32px;
+  }
+  .tariff-tile .tariff-description {
+    padding: 20px 20px;
+    gap: 15px;
+  }
+  .tariff-tile .tariff-description h2 {
+    font-size: 21px;
+  }
+  .tariff-description .tariff-price-block {
+    gap: 15px;
+  }
+  .tariff-description .record-button {
+    font-size: 21px;
+    height: 48px;
+  }
+  .tariff-price-block .discount {
+    min-height: 32px;
+    min-width: 48px;
+  }
+  .price-info .prices {
+    gap: 13px;
+  }
+  footer {
+    padding: 25px 44px;
+  }
+}
+
+@media (max-width: 374px) {
+  .navbar {
+    height: 64px;
+    padding: 3px 11px;
+  }
+  .company-name {
+    font-size: 20px;
+  }
+  .logo {
+    margin-right: 10px;
+    height: 40px;
+    width: 52px;
+  }
+  .navbar-menu {
+    display: none;
+  }
+  .button-menu {
+    width: 64px;
+    height: 24px;
+  }
+  .button-menu .line {
+    width: 64px;
+    height: 4px;
+    border-radius: 5px;
+  }
+  .menu-item {
+    padding: 5px 20px;
+    font-size: 20px;
+  }
   
-  .target-audience__tile-without-icon {
+  .course-sections {
+    padding: 0px 11px;
+    gap: 20px;
+  }
+  .course-sections .preview-of-course-structure{
+    margin-top: 84px;
+    padding: 16px 0px 20px 20px;
+  }
+  .icon-developer {
+    display: none;
+  } 
+  .description-of-the-proffesion-with-recording-elements {
+    display: none;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile {
+    display: flex;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
+    display: flex;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile h1 {
+    font-size: 29px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile h2 {
+    font-size: 21px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile p {
+    font-size: 21px;
+  }
+  .course-entry-structure .course-entry-button {
+    font-size: 26px;
+  }
+  .course-entry-structure h2,
+  .course-entry-structure p {
+    font-size: 16px;
+  }
+  .course-entry-structure .course-entry-button {
+    min-height: 51px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile .top-content__description {
+    max-width: 231px;
+    gap: 45px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile img {
+    height: 100%;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
+    padding-right: 9px;
+  }
+  .course-sections .grid-block__description-of-program-structure {
+    padding: 20px 20px;
+    row-gap: 35px;
+    border-radius: 20px;
+  }
+  .grid-block__description-of-program-structure .grid-item {
+    width: 100%;
+    min-height: 32px;
+    font-size: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 48px;
+    height: 48px;
+  }
+  .grid-block__description-of-program-structure .grid-item:nth-child(3) {
+    order: 2;
+  }
+  .course-sections .target-audience {
+    padding: 16px 20px 20px 20px;
+    border-radius: 20px;
+    gap: 20px
+  }
+  h1 {
+    font-size: 36px;
+  }
+  .target-audience .grid-block__target-audience-tiles {
+    gap: 20px;
+  }
+  .target-audience-tiles__top-row,
+  .target-audience-tiles__bottom-row {
+    grid-template-columns: repeat(1, 100%);
+    gap: 28px;
+  }
+  .target-audience-tiles__bottom-row .target-audience__tile:nth-child(1) {
+    order: 2;
+  }
+  .target-audience__tile {
+    display: none;
+  }
+
+  .target-audience-tile__mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    color: #FFFFFF;
+    background-color: #17282F;
+    border-radius: 20px;
+    gap: 11px;
+  }
+
+  .target-audience-tile-without-icon__mobile {
+    color: #000000;
+    background-color: #7DAEA3;
+    width: 100%;
+  }
+
+  .target-audience-tile-mobile__title {
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .target-audience-tile__mobile h2 {
+    font-size: 21px;
+  }
+
+  .target-audience-tile-without-icon__mobile h2 {
+    width: auto;
+    margin-bottom: 7px;
+  }
+
+  .target-audience-tile-mobile__description p {
+    font-family: Oswald-Light;
+    font-size: 16px;
+  }
+  img {
+    width: 103px;
+    height: 64px;
+  }
+  .course-sections .teachers-mentors {
+    padding: 16px 20px 20px 20px;
+    border-radius: 20px;
+    align-items: center;
+    gap: 15px;
+  }
+  .teachers-mentors .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .teachers-mentors .description p {
+    font-size: 16px;
+    height: 133px;
+  }
+  .grid-block__mentor-tiles {
+    grid-template-columns: repeat(1, 100%);
+    gap: 41px;
+  }
+  .grid-block__mentor-tiles .tile {
+    min-height: 370px;
+  }
+  .grid-block__mentor-tiles .tile img {
+    width: 100%;
+    height: 200px;
+  }
+  .grid-block__mentor-tiles .description-frame {
+    padding: 10px 26px 20px 26px;
+    gap: 10px;
+  }
+  .grid-block__mentor-tiles .description-frame__stack {
+    gap: 7px;
+  }
+  .grid-block__mentor-tiles .description-frame h2,
+  .grid-block__mentor-tiles .description-frame__stack h1,
+  .grid-block__mentor-tiles .description-frame__stack p {
+    font-size: 16px;
+  }
+  .content-grid .content-item {
+    display: none;
+  }
+  .content-grid .content-item__mobile {
+    display: flex;
+  }
+  .course-sections .program {
+    padding: 16px 20px 20px 20px;
+  }
+  .program .spoiler {
+    padding: 20px 30px;
+  }
+  .spoiler .spoiler-preview__title p {
+    max-width: 150px;
+  }
+  .spoiler-preview .spoiler-toggle-button {
+    width: 48px;
+    height: 48px;
+  }
+  .spoiler-content .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .course-sections .tariffs {
+    padding: 12px 20px 20px 20px;
+    border-radius: 20px;
+    gap: 30px;
+  }
+  .tariffs h1 {
+    text-align: center;
+  }
+  .tariffs .grid-block__tariff-tiles {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .grid-block__tariff-tiles .tariff-tile {
+    padding: 25px 5px;
+    gap: 20px;
+  }
+  .tariff-tile .tariff-features {
+    padding: 0px 20px;
+    gap: 19px;
+  }
+  .tariff-features .feature img {
+    height: 32px;
+    width: 32px;
+  }
+  .tariff-tile .tariff-description {
+    padding: 20px 20px;
+    gap: 15px;
+  }
+  .tariff-tile .tariff-description h2 {
+    font-size: 21px;
+  }
+  .tariff-description .tariff-price-block {
+    gap: 15px;
+  }
+  .tariff-description .record-button {
+    font-size: 21px;
+    height: 48px;
+  }
+  .tariff-price-block .discount {
+    min-height: 32px;
+    min-width: 48px;
+  }
+  .price-info .prices {
+    gap: 10px;
+  }
+  footer {
+    padding: 25px 11px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 575px) {
+  .navbar {
+    height: 64px;
+    padding: 3px 11px;
+  }
+  .company-name {
+    font-size: 20px;
+  }
+  .logo {
+    margin-right: 10px;
+    height: 40px;
+    width: 52px;
+  }
+  .navbar-menu {
+    display: none;
+  }
+  .button-menu {
+    width: 64px;
+    height: 24px;
+  }
+  .button-menu .line {
+    width: 64px;
+    height: 4px;
+    border-radius: 5px;
+  }
+  .menu-item {
+    padding: 5px 20px;
+    font-size: 20px;
+  }
+  
+  .course-sections {
+    padding: 0px 11px;
+    gap: 20px;
+  }
+  .course-sections .preview-of-course-structure{
+    margin-top: 84px;
+    padding: 16px 0px 20px 20px;
+  }
+  .icon-developer {
+    display: none;
+  } 
+  .description-of-the-proffesion-with-recording-elements {
+    display: none;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile {
+    display: flex;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
+    display: flex;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile h1 {
+    font-size: 29px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile h2 {
+    font-size: 21px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile p {
+    font-size: 21px;
+  }
+  .course-entry-structure .course-entry-button {
+    font-size: 26px;
+  }
+  .course-entry-structure h2,
+  .course-entry-structure p {
+    font-size: 16px;
+  }
+  .course-entry-structure .course-entry-button {
+    min-height: 51px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile .top-content__description {
+    max-width: 231px;
+    gap: 45px;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile img {
+    height: 100%;
+  }
+  .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
+    padding-right: 9px;
+  }
+  .course-sections .grid-block__description-of-program-structure {
+    padding: 20px 20px;
+    height: 380px;
+    row-gap: 16px;
+    border-radius: 20px;
+  }
+  .grid-block__description-of-program-structure .grid-item {
+    width: 100%;
+    min-height: 32px;
+    max-height: 57px;
+    font-size: 16px;
+  }
+  .grid-block__description-of-program-structure .grid-item__icon {
+    width: 32px;
+    height: 32px;
+  }
+  .grid-block__description-of-program-structure .grid-item:nth-child(3) {
+    order: 2;
+  }
+  .course-sections .target-audience {
+    padding: 16px 20px 20px 20px;
+    border-radius: 20px;
+    gap: 20px
+  }
+  h1 {
+    font-size: 36px;
+  }
+  .target-audience .grid-block__target-audience-tiles {
+    gap: 20px;
+  }
+  .target-audience-tiles__top-row,
+  .target-audience-tiles__bottom-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .target-audience-tiles__bottom-row .target-audience__tile:nth-child(1) {
+    order: 2;
+  }
+  .target-audience__tile {
+    display: none;
+  }
+
+  .target-audience-tile__mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    color: #FFFFFF;
+    background-color: #17282F;
+    border-radius: 20px;
+    min-height: 188px;
+    max-height: 228px;
+    gap: 11px;
+  }
+
+  .target-audience-tile-without-icon__mobile {
     color: #000000;
     background-color: #7DAEA3;
   }
-  
-  .target-audience-tile__description {
+
+  .target-audience-tile-mobile__title {
     display: flex;
-    flex-direction: column;
-    gap: 11px;
+    justify-content: space-between;
+    height: 64px;
   }
-  
-  .target-audience-tile__description h2 {
-    font-family: Finlandica-SemiBold;
+
+  .target-audience-tile__mobile h2 {
     font-size: 21px;
+    width: 142px;
   }
-  
-  .target-audience-tile__description p {
+
+  .target-audience-tile-without-icon__mobile h2 {
+    width: auto;
+    margin-bottom: 7px;
+  }
+
+  .target-audience-tile-mobile__description p {
     font-family: Oswald-Light;
     font-size: 16px;
   }
-  
-  .course-sections .teachers-mentors {
-    display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    border-radius: 30px;
+  img {
+    width: 103px;
+    height: 64px;
   }
-  
+  .course-sections .teachers-mentors {
+    padding: 16px 20px 20px 20px;
+    border-radius: 20px;
+    align-items: center;
+    gap: 15px;
+  }
   .teachers-mentors .description {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
-  
-  .teachers-mentors .description h1 {
-    text-align: left;
-  }
-  
   .teachers-mentors .description p {
-    font-family: Oswald-Light;
-    display: flex;
-    align-items: center;
+    font-size: 16px;
+    height: 133px;
   }
-  
-  .teachers-mentors .grid-block__mentor-tiles {
-    display: grid;
-    justify-content: space-between;
+  .grid-block__mentor-tiles {
+    grid-template-columns: repeat(1, 100%);
+    gap: 41px;
   }
-  
   .grid-block__mentor-tiles .tile {
-    background-color: #D9D9D9;
-    border-radius: 30px;
+    min-height: 450px;
   }
-  
   .grid-block__mentor-tiles .tile img {
-    border-radius: 30px 30px 0px 0px;
+    width: 100%;
+    height: 280px;
   }
-  
-  .grid-block__mentor-tiles .description-frame,
+  .grid-block__mentor-tiles .description-frame {
+    padding: 10px 26px 20px 26px;
+    gap: 10px;
+  }
   .grid-block__mentor-tiles .description-frame__stack {
-    display: flex;
-    flex-direction: column;
+    gap: 7px;
   }
-  
-  .grid-block__mentor-tiles .description-frame__stack h1{
-    text-align: start;
-  }
-  
-  .grid-block__mentor-tiles .description-frame h2 {
-    font-family: Oswald-Light;
-    color: #F25553;
-  }
-  
-  .description-frame__stack h1 {
-    font-family: Finlandica-SemiBold;
-    color: #000000;
-  }
-  
-  .description-frame__stack p {
-    font-family: Oswald-Light;
-    color: #000000;
-  }
-  
-  .program {
-    display: flex;
-    flex-direction: column;
-    background-color: #D9D9D9;
-    border-radius: 30px;
-    gap: 40px;
-  }
-  
-  .program .spoilers {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-  
-  .program .spoiler {
-    background-color: #FFFFFF;
-    border-radius: 30px;
-    padding: 15px 45px;
-  } 
-  
-  .spoiler .spoiler-preview {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .spoiler-content {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.7s ease, opacity 0.7s ease;
-    margin-top: 25px;
-    font-family: Oswald-Light;
+  .grid-block__mentor-tiles .description-frame h2,
+  .grid-block__mentor-tiles .description-frame__stack h1,
+  .grid-block__mentor-tiles .description-frame__stack p {
     font-size: 16px;
   }
-  
-  .spoiler-content .content-title {
-    margin-bottom: 30px;
-  }
-  
-  .spoiler-content.show {
-    max-height: 1500px;
-    opacity: 1;
-  }
-  .spoiler-content .content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  .spoiler-content .content-grid h2 {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  
   .content-grid .content-item {
-    opacity: 0.5;
-  }
-  
-  .content-grid .content-item__mobile {
     display: none;
   }
-  
-  .content-grid .content-item ol {
-    padding-left: 0px;
-    list-style-position: inside;
+  .content-grid .content-item__mobile {
+    display: flex;
   }
-  
-  .content-grid .content-item li {
-    margin-bottom: 3px;
+  .course-sections .program {
+    padding: 16px 20px 20px 20px;
   }
-  
+  .program .spoiler {
+    padding: 20px 30px;
+  }
+  .spoiler .spoiler-preview__title p {
+    max-width: 220px;
+  }
   .spoiler-preview .spoiler-toggle-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #D9D9D9;
-    border-radius: 5px;
-    font-family: Finlandica-SemiBold;
-    font-size: 24px;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
   }
-  
-  .spoiler-preview__title {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  .spoiler-content .content-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .spoiler-preview__title h2 {
-    font-family: Finlandica-SemiBold;
-    font-size: 21px;
-  }
-  
-  .spoiler-preview__title p {
-    font-family: Oswald-Light;
-    font-size: 16px;
-    opacity: 0.5;
-  }
-  
   .course-sections .tariffs {
-    display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    border-radius: 30px;
+    padding: 12px 20px 20px 20px;
+    border-radius: 20px;
+    gap: 30px;
   }
-  
-  .tariffs .grid-block__tariff-tiles {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  
-  .grid-block__tariff-tiles .tariff-tile {
-    display: flex;
-    flex-direction: column;
-    background-color: #D9D9D9;
-    border-radius: 30px;
-  }
-  
-  .tariff-tile .tariff-features {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-  }
-  
-  .tariff-features .feature {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    font-family: Finlandica-SemiBold;
-  }
-  
-  .tariff-tile .tariff-description {
-    display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    border-radius: 30px;
-  }
-  
-  .tariff-tile .tariff-description h2 {
-    font-family: Finlandica-SemiBold;
-    font-size: 21px;
-  }
-  
-  .tariff-description .tariff-price-block {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .tariff-description .record-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #E78A4E;
-    font-family: Finlandica-SemiBold;
-    font-size: 21px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .record-button:hover {
-    background-color: #000000;
-    color: #FFFFFF;
-  }
-  
-  .tariff-price-block .price-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .price-info .prices {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 13px;
-  }
-  
-  .prices .original-price,
-  .prices .discount-price {
-    font-family: Finlandica-SemiBold;
-    font-size: 16px;
-  }
-  
-  .prices .original-price {
-    opacity: 0.5;
-  }
-  
-  .price-info .discount {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #D9D9D9;
-    border-radius: 30px;
-    font-family: Finlandica-SemiBold;
-    font-size: 16px;
-  }
-  
-  .price-info .big-discount {
-    background-color: #FABB1E;
-  }
-  
-  .tariff-price-block .payment-plan {
-    font-family: Oswald-Light;
-    font-size: 16px;
-    opacity: 0.5;
-  }
-  
-  h1 {
+  .tariffs h1 {
     text-align: center;
-    font-family: Finlandica-SemiBold;
   }
-  
-  h1,
-  h2,
-  p {
-    margin-bottom: 0;
+  .tariffs .grid-block__tariff-tiles {
+    grid-template-columns: 1fr;
+    gap: 34px;
   }
-  
-  
-  .telegram a {
-    color: #FFFFFF;
-    opacity: 0.75;
+  .grid-block__tariff-tiles .tariff-tile {
+    padding: 25px 5px;
+    gap: 20px;
   }
-  
-  .telegram a:hover {
-    color: #FABB1E;
-    text-decoration: underline;
+  .tariff-tile .tariff-features {
+    padding: 0px 20px;
+    gap: 19px;
   }
-  
-  
-  @media (min-width: 1500px) {
-    .navbar {
-      height: 86px;
-      padding: 3px 72px;
-    }
-    
-    .company-name {
-      font-size: 2.5vw;
-    }
-    
-    .navbar-menu li a {
-      font-size: 1.3vw;
-    }
-  
-    .logo {
-      margin-right: 24px;
-      height: 120%;
-    }
-    
-    .button-menu {
-      display: none;
-    }
-  
-    .course-sections {
-      padding: 0px 72px;
-      gap: 50px;
-    }
-    
-    .course-sections .preview-of-course-structure {
-      margin-top: 106px;
-      padding: 24px 43px 50px 43px;
-    }
-    .course-entry-structure {
-      gap: 21px;
-    }
-    .course-entry-button {
-      font-size: 2vw;
-    }
-    .description-of-the-proffesion-with-recording-elements {
-      width: 40%;
-      gap: 50px;
-    }
-    .description-of-the-proffesion-with-recording-elements p {
-      font-size: 1.4vw;
-    }
-    .preview-of-course-structure img{
-      max-width: 900px;
-    }
-    .course-entry-structure .course-entry-button {
-     height: 4.5vw; 
-    }
-    .course-sections .grid-block__description-of-program-structure {
-      padding: min(32px, 32px) min(43px, 5vw);
-      grid-template-columns: repeat(3, 30vw);
-      gap: 48px;
-    }
-  
-    .grid-block__description-of-program-structure .grid-item {
-      font-size: 1.0vw;
-    }
-  
-    .grid-block__description-of-program-structure .grid-item__icon {
-      width: 4vw;
-      height: 4vw;
-    }
-  
-    .course-sections .target-audience {
-      padding: 24px 43px 50px 43px;
-      gap: min(72px, 5vw);
-    }
-  
-    h1 {
-      font-size: 4vw;
-    }
-  
-    .target-audience .grid-block__target-audience-tiles {
-      gap: 2vw;
-    }
-  
-    .target-audience-tiles__top-row {
-      grid-template-columns: minmax(25vw, 45%) 50%;
-    }
-  
-    .target-audience-tiles__bottom-row {
-      grid-template-columns: 50% minmax(25vw, 45%);
-    }
-  
-    .target-audience__tile {
-      padding: 1.5vw 2.5vw;
-    }
-  
-    .target-audience__icon {
-      margin-left: 1vw;
-      height: 9vw;
-    }
-  
-    .course-sections .teachers-mentors {
-      padding: 24px 43px 50px 43px;
-      gap: min(145px, 5vw);
-    }
-  
-    .teachers-mentors .description h1 {
-      max-width: 600px;
-    }
-  
-    .teachers-mentors .description p {
-      font-size: 1.4vw;
-      width: 35vw;
-      min-height: 10vh;
-    }
-  
-    .grid-block__mentor-tiles {
-      grid-template-columns: repeat(4, 20vw);
-    }
-  
-    .grid-block__mentor-tiles .tile img {
-      width: 100%;
-      height: 45%;
-    }
-  
-    .grid-block__mentor-tiles .description-frame {
-      padding: 15px 26px 35px 26px;
-      gap: 15px;
-    }
-  
-    .grid-block__mentor-tiles .description-frame__stack {
-      gap: 14px;
-    }
-     
-    .target-audience-tile__description h2 {
-      font-size: 1.4vw;
-    }
-    .target-audience-tile__description p {
-      font-size: 1.2vw;
-    }
-    .grid-block__mentor-tiles .description-frame h2,
-    .grid-block__mentor-tiles .description-frame__stack h1,
-    .grid-block__mentor-tiles .description-frame__stack p {
-      font-size: 1.4vw;
-    }
-  
-    .course-sections .program {
-      padding: 24px 43px 50px 43px;
-      gap: min(72px, 5vw);
-    }
-  
-    .program .spoilers {
-      gap: 30px;
-    }
-    .program .spoiler {
-      padding: 25px 45px;
-    }
-  
-    .spoiler-preview .spoiler-toggle-button {
-      width: 64px;
-      height: 64px;
-      font-size: 1.4vw;
-    }
-  
-    .spoiler-content .content-title {
-      width: 50%;
-    }
-  
-    .spoiler-content .content-grid h2 {
-      font-size: 1.0vw;
-    }
-  
-    .spoiler-preview__title h2 {
-      font-size: 1.4vw;
-    }
-  
-    .spoiler-preview__title p {
-      font-size: 1.0vw;
-    }
-  
-    .spoiler-content {
-      font-size: 1.0vw;
-    }
-  
-    .course-sections .tariffs {
-      gap: min(72px, 5vw);
-      padding: 12px 43px 40px 43px;
-    }
-  
-    .tariff-tile .tariff-description h2 {
-      font-size: 1.4vw;
-    }
-  
-    .grid-block__tariff-tiles {
-      gap: 47px;
-    }
-  
-    .grid-block__tariff-tiles .tariff-tile {
-      padding: 40px 15px;
-      gap: 40px;
-    }
-  
-    .tariff-tile .tariff-features {
-      padding: 0px 25px;
-      gap: 19px;
-    }
-  
-    .tariff-features .feature p {
-      font-size: 1.0vw;
-    }
-  
-    .tariff-features .feature img {
-      height: 2vw;
-      width: 2vw;
-    }
-  
-    .tariff-tile .tariff-description {
-      padding: 19px 20px;
-      gap: 32px;
-    }
-  
-    .tariff-description .record-button {
-      border-radius: 20px;
-      min-height: 64px;
-      font-size: 1.4vw;
-    }
-  
-    .tariff-description .tariff-price-block {
-      gap: 13px;
-    }
-    .tariff-price-block .discount {
-      min-height: 64px;
-      min-width: 96px;
-      font-size: 1.0vw;
-    }
-    .tariff-price-block .payment-plan,
-    .prices .original-price,
-    .prices .discount-price {
-      font-size: 1.0vw;
-    }
-  
-    footer {
-      padding: 2vw 5vw;
-    }
+  .tariff-features .feature img {
+    height: 32px;
+    width: 32px;
   }
-  
-  @media (min-width: 1400px) and (max-width: 1499px) {
-    .navbar {
-      height: 86px;
-      padding: 3px 72px;
-    }
-    .company-name {
-      font-size: 40px;
-    }
-    .navbar-menu li a {
-      font-size: 25px;
-    }
-    .logo {
-      margin-right: 24px;
-      height: 66px;
-      width: 88px;
-    }
-    .button-menu {
-      display: none;
-    }
-    .course-sections {
-      padding: 0px 72px;
-      gap: 50px;
-    }
-    .course-sections .preview-of-course-structure{
-      margin-top: 106px;
-      height: 638px;
-      padding: 24px 0px 50px 43px;
-    }
-    .description-of-the-proffesion-with-recording-elements {
-      max-width: 431px;
-    }
-    .course-entry-structure .course-entry-button {
-      font-size: 30px;
-    }
-    .course-entry-structure h2 {
-      font-size: 20px;
-    }
-    .course-entry-structure p {
-      font-size: 15px;
-    }
-    .course-entry-structure .course-entry-button {
-      min-height: 60px;
-    }
-    .course-sections .grid-block__description-of-program-structure {
-      padding: 16px 43px;
-      height: 195px;
-      grid-template-columns: 443px 311px 359px;
-      row-gap: 35px;
-    }
-    .grid-block__description-of-program-structure .grid-item {
-      height: 64px;
-      min-width: 311px;
-      max-width: 443px;
-      font-size: 16px;
-    }
-    .grid-block__description-of-program-structure .grid-item__icon {
-      width: 64px;
-      height: 64px;
-    }
-    .course-sections .target-audience {
-      padding: 24px 43px 50px 43px;
-      gap: 43px;
-    }
-     h1 {
-      font-size: 64px;
-    }
-    .target-audience .grid-block__target-audience-tiles {
-      gap: 41px;
-    }
-    .target-audience-tiles__top-row {
-      grid-template-columns: minmax(526px, 45%) 50%;
-     }
-     .target-audience-tiles__bottom-row {
-      grid-template-columns: 50% minmax(526px, 45%);
-     }
-    .target-audience__tile {
-      padding: 30px 43px;
-    }
-    .target-audience__icon{
-      margin-left: 17px;
-      width: 126px;
-      height: 119px;
-    }
-    .course-sections .teachers-mentors {
-      padding: 24px 43px 50px 43px;
-      height: 912px;
-      gap: 95px;
-    }
-  
-    .teachers-mentors .description h1 {
-      max-width: 600px;
-    }
-  
-    .teachers-mentors .description p {
-      font-size: 21px;
-      width: 416px;
-      min-height: 154px;
-    }
-    .grid-block__mentor-tiles {
-      grid-template-columns: repeat(4, 273px);
-    }
-    .grid-block__mentor-tiles .tile img {
-      width: 100%;
-      height: 248px;
-    }
-    .grid-block__mentor-tiles .description-frame {
-      padding: 15px 26px 35px 26px;
-      gap: 10px;
-    }
-    .grid-block__mentor-tiles .description-frame__stack {
-      gap: 14px;
-    }
-    .grid-block__mentor-tiles .description-frame h2,
-    .grid-block__mentor-tiles .description-frame__stack h1,
-    .grid-block__mentor-tiles .description-frame__stack p {
-      font-size: 21px;
-    }
-    .course-sections .program {
-      padding: 24px 43px 50px 43px;
-    }
-    .spoiler-content .content-title {
-      max-width: 636px;
-    }
-    .course-sections .tariffs {
-      gap: 50px;
-      padding: 12px 43px 40px 43px;
-    }
-    .grid-block__tariff-tiles {
-      gap: 47px;
-    }
-    .grid-block__tariff-tiles .tariff-tile {
-      padding: 25px 5px;
-      gap: 20px;
-    }
-    .tariff-tile .tariff-features {
-      padding: 0px 25px;
-      gap: 19px;
-    }
-    .tariff-features .feature img {
-      height: 24px;
-      width: 24px;
-    }
-    .tariff-tile .tariff-description {
-      padding: 19px 20px;
-      gap: 21px;
-    }
-    .tariff-description .record-button {
-      border-radius: 10px;
-      min-height: 47px;
-    }
-    .tariff-description .tariff-price-block {
-      gap: 13px;
-    }
-    .tariff-price-block .discount {
-      min-height: 32px;
-      min-width: 56px;
-    }
-    footer {
-      padding: 27px 72px;
-    }
+  .tariff-tile .tariff-description {
+    padding: 20px 20px;
+    gap: 15px;
   }
-  
-  @media (min-width: 1200px) and (max-width: 1399px) {
-    .navbar {
-      height: 74px;
-      padding: 3px 82px;
-    }
-    .company-name {
-      font-size: 40px;
-    }
-    .navbar-menu li a {
-      font-size: 25px;
-    }
-    .logo {
-      margin-right: 24px;
-      height: 66px;
-      width: 88px;
-    }
-    .button-menu {
-      display: none;
-    }
-    .course-sections {
-      padding: 0px 82px;
-      gap: 50px;
-    }
-    .course-sections .preview-of-course-structure{
-      height: 614px;
-      margin-top: 94px;
-      padding: 21px 0px 41px 37px;
-    }
-    .description-of-the-proffesion-with-recording-elements {
-      max-width: 431px;
-    }
-    .course-entry-structure .course-entry-button {
-      font-size: 30px;
-    }
-    .course-entry-structure h2 {
-      font-size: 20px;
-    }
-    .course-entry-structure p {
-      font-size: 15px;
-    }
-    .course-entry-structure .course-entry-button {
-      min-height: 60px;
-    }
-    .preview-of-course-structure img {
-      max-width: 543px;
-    }
-    .course-sections .grid-block__description-of-program-structure {
-      padding: 16px 37px;
-      height: 294px;
-      grid-template-columns: 443px 359px;
-      row-gap: 35px;
-    }
-    .grid-block__description-of-program-structure .grid-item {
-      height: 64px;
-      min-width: 359px;
-      max-width: 443px;
-      font-size: 16px;
-    }
-    .grid-block__description-of-program-structure .grid-item__icon {
-      width: 64px;
-      height: 64px;
-    }
-    .course-sections .target-audience {
-      padding: 21px 37px 41px 37px;
-      gap: 43px;
-    }
-    h1 {
-      font-size: 64px;
-    }
-    .target-audience .grid-block__target-audience-tiles {
-      gap: 28px;
-    }
-     .target-audience-tiles__top-row {
-      grid-template-columns: minmax(451px, 45%) 50%;
-     }
-     .target-audience-tiles__bottom-row {
-      grid-template-columns: 50% minmax(451px, 45%);
-     }
-    .target-audience__tile {
-      /* height: 182px; */
-      padding: 25px 37px;
-    }
-    .target-audience__icon{
-      margin-left: 12px;
-      width: 117px;
-      height: 110px;
-    }
-    .course-sections .teachers-mentors {
-      padding: 21px 37px 41px 37px;
-      gap: 81px;
-    }
-    .teachers-mentors .description p {
-      font-size: 21px;
-      width: 451px;
-      height: 154px;
-    }
-    .grid-block__mentor-tiles {
-      grid-template-columns: repeat(2, minmax(45%, 47%));
-      gap: 41px;
-    }
-    .grid-block__mentor-tiles .tile img {
-      width: 100%;
-      height: 291px;
-    }
-    .grid-block__mentor-tiles .description-frame {
-      padding: 15px 26px 35px 26px;
-      gap: 10px;
-    }
-    .grid-block__mentor-tiles .description-frame__stack {
-      gap: 7px;
-    }
-    .grid-block__mentor-tiles .description-frame h2,
-    .grid-block__mentor-tiles .description-frame__stack h1,
-    .grid-block__mentor-tiles .description-frame__stack p {
-      font-size: 29px;
-    }
-    .course-sections .program {
-      padding: 24px 37px 40px 37px;
-    }
-    .spoiler-content .content-title {
-      max-width: 546px;
-    }
-    .course-sections .tariffs {
-      padding: 12px 37px 40px 37px;
-      gap: 50px;
-    }
-    .grid-block__tariff-tiles {
-      gap: 25px;
-    }
-    .grid-block__tariff-tiles .tariff-tile {
-      padding: 25px 5px;
-      gap: 20px;
-    }
-    .tariff-tile .tariff-features {
-      padding: 0px 20px;
-      gap: 19px;
-    }
-    .tariff-features .feature img {
-      height: 24px;
-      width: 24px;
-    }
-    .tariff-tile .tariff-description {
-      padding: 19px 15px;
-      gap: 21px;
-    }
-    .tariff-description .record-button {
-      border-radius: 10px;
-      min-height: 47px;
-    }
-    .tariff-description .tariff-price-block {
-      gap: 13px;
-    }
-    .tariff-price-block .discount {
-      min-height: 32px;
-      min-width: 56px;
-    }
-    .price-info .prices {
-      gap: 8px;
-    }
-    footer {
-      padding: 27px 82px;
-    }
+  .tariff-tile .tariff-description h2 {
+    font-size: 21px;
   }
-  
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .navbar {
-      height: 61px;
-      padding: 3px 44px;
-    }
-    .company-name {
-      font-size: 33px;
-    }
-    .navbar-menu li a {
-      font-size: 21px;
-    }
-    .logo {
-      margin-right: 24px;
-      height: 54px;
-      width: 71px;
-    }
-    .button-menu {
-      display: none;
-    }
-    .course-sections {
-      padding: 0px 44px;
-      gap: 37px;
-    }
-    .course-sections .preview-of-course-structure{
-      margin-top: 81px;
-      padding: 21px 0px 41px 31px;
-    }
-    .description-of-the-proffesion-with-recording-elements {
-      max-width: 377px;
-      gap: 21px;
-    }
-    .description-of-the-proffesion-with-recording-elements h1 {
-      font-size: 53px;
-    }
-    .description-of-the-proffesion-with-recording-elements h2 {
-      font-size: 25px;
-    }
-    .description-of-the-proffesion-with-recording-elements p {
-      font-size: 23px;
-    }
-    .course-entry-structure .course-entry-button {
-      font-size: 25px;
-    }
-    .course-entry-structure h2 {
-      font-size: 18px;
-    }
-    .course-entry-structure p {
-      font-size: 14px;
-    }
-    .course-entry-structure .course-entry-button {
-      min-height: 50px;
-    }
-    .preview-of-course-structure img {
-      max-width: 456px;
-    }
-    .course-sections .grid-block__description-of-program-structure {
-      padding: 16px 31px;
-      height: 278px;
-      grid-template-columns: 443px 359px;
-      row-gap: 35px;
-    }
-    .grid-block__description-of-program-structure .grid-item {
-      height: 58px;
-      min-width: 359px;
-      max-width: 443px;
-      font-size: 16px;
-    }
-    .grid-block__description-of-program-structure .grid-item__icon {
-      width: 58px;
-      height: 58px;
-    }
-    .grid-item .grid-item__text {
-      max-height: 76px
-    }
-    .course-sections .target-audience {
-      padding: 21px 31px 41px 31px;
-      gap: 43px
-    }
-    h1 {
-      font-size: 53px;
-    }
-    .target-audience .grid-block__target-audience-tiles {
-      gap: 28px;
-    }
-    .target-audience-tiles__top-row {
-      grid-template-columns: minmax(376px, 45%) 50%;
-     }
-     .target-audience-tiles__bottom-row {
-      grid-template-columns: 50% minmax(376px, 45%);
-     }
-    .target-audience__tile {
-      padding: 25px 31px;
-    }
-    .target-audience__icon{
-      margin-left: 17px;
-      width: 100px;
-      height: 92px;
-    }
-    .course-sections .teachers-mentors {
-      padding: 21px 31px 41px 31px;
-      gap: 81px;
-    }
-    .teachers-mentors .tile {
-      min-height: 557px;
-      max-height: 643px;
-    }
-    .teachers-mentors .description h1 {
-      max-width: 600px;
-    }
-    .teachers-mentors .description p {
-      font-size: 21px;
-      width: 376px;
-      height: 154px;
-    }
-    .grid-block__mentor-tiles {
-      grid-template-columns: repeat(2, minmax(400px, 47%));
-      gap: 41px;
-    }
-    .grid-block__mentor-tiles .tile img {
-      width: 100%;
-      height: 291px;
-    }
-    .grid-block__mentor-tiles .description-frame {
-      padding: 15px 26px 35px 26px;
-      gap: 10px;
-    }
-    .grid-block__mentor-tiles .description-frame__stack {
-      gap: 7px;
-    }
-    .grid-block__mentor-tiles .description-frame h2,
-    .grid-block__mentor-tiles .description-frame__stack h1,
-    .grid-block__mentor-tiles .description-frame__stack p {
-      font-size: 29px;
-    }
-    .course-sections .program {
-      padding: 24px 37px 40px 37px;
-    }
-    .spoiler-content .content-title {
-      max-width: 456px;
-    }
-    .course-sections .tariffs {
-      padding: 12px 37px 40px 37px;
-      gap: 40px;
-    }
-    .tariffs .grid-block__tariff-tiles {
-      grid-template-columns: 1fr;
-      gap: 34px;
-    }
-    .grid-block__tariff-tiles .tariff-tile {
-      padding: 25px 5px;
-      gap: 20px;
-    }
-    .tariff-tile .tariff-features {
-      padding: 0px 20px;
-      gap: 19px;
-    }
-    .tariff-features .feature {
-      font-size: 21px;
-    }
-    .tariff-features .feature img {
-      height: 40px;
-      width: 40px;
-    }
-    .tariff-tile .tariff-description {
-      padding: 10px 15px 19px 15px;
-      gap: 15px;
-    }
-    .tariff-tile .tariff-description h2 {
-      font-size: 32px;
-    }
-    .tariff-description .tariff-price-block {
-      gap: 13px;
-    }
-    .tariff-price-block .payment-plan,
-    .price-info .discount,
-    .prices .discount-price,
-    .prices .original-price {
-      font-size: 21px;
-    }
-    .tariff-description .record-button {
-      font-size: 48px;
-      max-height: 65px;
-    }
-    .tariff-price-block .discount {
-      min-height: 41px;
-      min-width: 90px;
-    }
-    .price-info .prices {
-      gap: 13px;
-    }
-    footer {
-      padding: 27px 45px;
-    }
+  .tariff-description .tariff-price-block {
+    gap: 15px;
   }
-  
-  @media (min-width: 768px) and (max-width: 991px) {
-    .navbar {
-      height: 86px;
-      padding: 0px 92px;
-    }
-    .company-name {
-      font-size: 36px;
-    }
-    .logo {
-      margin-right: 24px;
-      height: 66px;
-      width: 88px;
-    }
-    .navbar-menu {
-      display: none;
-    }
-    .button-menu {
-      width: 76px;
-      height: 43px;
-    }
-    .button-menu .line {
-      width: 76px;
-      height: 7px;
-      border-radius: 5px;
-    }
-    .course-sections {
-      padding: 0px 92px;
-      gap: 20px;
-    }
-    .course-sections .preview-of-course-structure{
-      margin-top: 106px;
-      padding: 24px 0px 24px 31px;
-    }
-    .icon-developer {
-      display: none;
-    } 
-    .description-of-the-proffesion-with-recording-elements {
-      display: none;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile {
-      display: flex;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
-      display: flex;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile h1 {
-      font-size: 55px;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile h2 {
-      font-size: 32px;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile p {
-      font-size: 32px;
-    }
-    .course-entry-structure .course-entry-button {
-      font-size: 48px;
-    }
-    .course-entry-structure h2,
-    .course-entry-structure p {
-      font-size: 24px;
-    }
-    .course-entry-structure .course-entry-button {
-      min-height: 84px;
-    }
-    .course-sections .grid-block__description-of-program-structure {
-      padding: 15px 31px;
-      grid-template-columns: repeat(2, minmax(200px, 350px));
-      row-gap: 16px;
-    }
-    .grid-block__description-of-program-structure .grid-item {
-      font-size: 16px;
-      width: 90%;
-      gap: 16px;
-    }
-    .grid-block__description-of-program-structure .grid-item:nth-child(3) {
-      order: 2;
-    }
-    .grid-block__description-of-program-structure .grid-item:nth-child(4) {
-      order: 1;
-    }
-    .grid-block__description-of-program-structure .grid-item__icon {
-      width: 48px;
-      height: 48px;
-    }
-    .grid-block__description-of-program-structure .grid-item__text {
-      line-height: 1.2;
-      align-items: center;
-    }
-    .course-sections .target-audience {
-      padding: 16px 31px 20px 31px;
-      border-radius: 20px;
-      gap: 20px;
-    }
-    h1 {
-      font-size: 40px;
-    }
-    .target-audience .grid-block__target-audience-tiles {
-      gap: 28px;
-    }
-    .target-audience-tiles__top-row,
-    .target-audience-tiles__bottom-row {
-      grid-template-columns: 1fr;
-      gap: 28px;
-    }
-    .target-audience-tiles__bottom-row .target-audience__tile:nth-child(1) {
-      order: 2;
-    }
-    .target-audience__tile {
-      min-height: 164px;
-      padding: 16px 31px;
-    }
-    .target-audience__icon{
-      margin-left: 17px;
-      width: 128px;
-      height: 128px;
-    }
-    .course-sections .teachers-mentors {
-      padding: 16px 31px 20px 31px;
-      gap: 25px;
-    }
-    .teachers-mentors .tile {
-      min-height: 405px;
-    }
-    .teachers-mentors .description {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 25px;
-    }
-    .teachers-mentors .description p {
-      font-size: 21px;
-      height: 107px;
-    }
-    .grid-block__mentor-tiles {
-      grid-template-columns: repeat(2, minmax(240.5px, 336.5px));
-      gap: 41px;
-    }
-    .grid-block__mentor-tiles .tile img {
-      width: 100%;
-      max-height: 200px;
-    }
-    .grid-block__mentor-tiles .description-frame {
-      padding: 15px 26px 35px 26px;
-      gap: 10px;
-    }
-    .grid-block__mentor-tiles .description-frame__stack {
-      gap: 7px;
-    }
-    .grid-block__mentor-tiles .description-frame h2,
-    .grid-block__mentor-tiles .description-frame__stack h1,
-    .grid-block__mentor-tiles .description-frame__stack p {
-      font-size: 20px;
-    }
-    .course-sections .program {
-      padding: 16px 37px 20px 37px;
-    }
-    .spoiler .spoiler-preview__title p {
-      max-width: 350px;
-    }
-    .course-sections .tariffs {
-      padding: 12px 37px 20px 37px;
-      border-radius: 20px;
-      gap: 40px;
-    }
-    .tariffs .grid-block__tariff-tiles {
-      grid-template-columns: 1fr;
-      gap: 34px;
-    }
-    .grid-block__tariff-tiles .tariff-tile {
-      padding: 25px 5px;
-      gap: 20px;
-    }
-    .tariff-tile .tariff-features {
-      padding: 0px 20px;
-      gap: 19px;
-    }
-    .tariff-features .feature img {
-      height: 32px;
-      width: 32px;
-    }
-    .tariff-tile .tariff-description {
-      padding: 20px 20px;
-      gap: 15px;
-    }
-    .tariff-tile .tariff-description h2 {
-      font-size: 21px;
-    }
-    .tariff-description .tariff-price-block {
-      gap: 15px;
-    }
-    .tariff-description .record-button {
-      font-size: 32px;
-      max-height: 48px;
-    }
-    .tariff-price-block .discount {
-      min-height: 43px;
-      min-width: 68px;
-    }
-    .price-info .prices {
-      gap: 13px;
-    }
-    footer {
-      padding: 25px 92px;
-    }
+  .tariff-description .record-button {
+    font-size: 21px;
+    height: 48px;
   }
-  
-  @media (min-width: 576px) and (max-width: 767px) {
-    .navbar {
-      height: 64px;
-      padding: 3px 44px;
-    }
-    .company-name {
-      font-size: 20px;
-    }
-    .logo {
-      margin-right: 10px;
-      height: 40px;
-      width: 52px;
-    }
-    .navbar-menu {
-      display: none;
-    }
-    .button-menu {
-      width: 74px;
-      height: 24px;
-    }
-    .button-menu .line {
-      width: 74px;
-      height: 4px;
-      border-radius: 5px;
-    }
-    .course-sections {
-      padding: 0px 44px;
-      gap: 20px;
-    }
-    .course-sections .preview-of-course-structure{
-      margin-top: 84px;
-      padding: 16px 0px 20px 20px;
-    }
-    .icon-developer {
-      display: none;
-    } 
-    .description-of-the-proffesion-with-recording-elements {
-      display: none;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile {
-      display: flex;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
-      display: flex;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile h1 {
-      font-size: 40px;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile h2 {
-      font-size: 28px;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile p {
-      font-size: 28px;
-    }
-    .course-entry-structure .course-entry-button {
-      font-size: 40px;
-    }
-    .course-entry-structure h2,
-    .course-entry-structure p {
-      font-size: 21px;
-    }
-    .course-entry-structure .course-entry-button {
-      min-height: 68px;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile .top-content__description {
-      max-width: 231px;
-      gap: 45px;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile img {
-      max-width: 350px;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
-      padding-right: 20px;
-    }
-    .course-sections .grid-block__description-of-program-structure {
-      padding: 20px 20px;
-      height: 408px;
-      row-gap: 16px;
-    }
-    .grid-block__description-of-program-structure .grid-item {
-      width: 100%;
-      height: 48px;
-      font-size: 16px;
-    }
-    .grid-block__description-of-program-structure .grid-item__icon {
-      width: 48px;
-      height: 48px;
-    }
-    .grid-block__description-of-program-structure .grid-item:nth-child(3) {
-      order: 2;
-    }
-    .course-sections .target-audience {
-      padding: 16px 20px 20px 20px;
-      border-radius: 20px;
-      gap: 20px
-    }
-    h1 {
-      font-size: 36px;
-    }
-    .target-audience .grid-block__target-audience-tiles {
-      gap: 28px;
-    }
-    .target-audience-tiles__top-row,
-    .target-audience-tiles__bottom-row {
-      grid-template-columns: 1fr;
-      gap: 28px;
-    }
-    .target-audience-tiles__bottom-row .target-audience__tile:nth-child(1) {
-      order: 2;
-    }
-    .target-audience__tile {
-      min-height: 140px;
-      padding: 16px;
-      border-radius: 20px;
-    }
-    .target-audience__icon{
-      margin-left: 24px;
-      width: 128px;
-      height: 118px;
-    }
-    .course-sections .teachers-mentors {
-      padding: 16px 20px 20px 20px;
-      border-radius: 20px;
-      gap: 20px;
-      align-items: center;
-    }
-    .teachers-mentors .description {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-    .teachers-mentors .description p {
-      font-size: 16px;
-      height: 98px;
-    }
-    .grid-block__mentor-tiles {
-      grid-template-columns: repeat(1, 100%);
-      gap: 41px;
-    }
-    .grid-block__mentor-tiles .tile {
-      min-height: 550px;
-    }
-    .grid-block__mentor-tiles .tile img {
-      width: 100%;
-      max-height: 350px;
-    }
-    .grid-block__mentor-tiles .description-frame {
-      padding: 10px 26px 20px 26px;
-      gap: 10px;
-    }
-    .grid-block__mentor-tiles .description-frame__stack {
-      gap: 7px;
-    }
-    .grid-block__mentor-tiles .description-frame h2,
-    .grid-block__mentor-tiles .description-frame__stack h1,
-    .grid-block__mentor-tiles .description-frame__stack p {
-      font-size: 21px;
-    }
-    .content-grid .content-item {
-      display: none;
-    }
-    .content-grid .content-item__mobile {
-      display: flex;
-    }
-    .course-sections .program {
-      padding: 16px 20px 20px 20px;
-    }
-    .program .spoiler {
-      padding: 30px 20px;
-    }
-    .spoiler .spoiler-preview__title p {
-      max-width: 340px;
-    }
-    .spoiler-preview .spoiler-toggle-button {
-      width: 48px;
-      height: 48px;
-    }
-    .spoiler-content .content-grid {
-      grid-template-columns: 1fr;
-    }
-    .course-sections .tariffs {
-      padding: 12px 20px 20px 20px;
-      border-radius: 20px;
-      gap: 20px;
-    }
-    .tariffs .grid-block__tariff-tiles {
-      grid-template-columns: 1fr;
-      gap: 34px;
-    }
-    .grid-block__tariff-tiles .tariff-tile {
-      padding: 25px 5px;
-      gap: 20px;
-    }
-    .tariff-tile .tariff-features {
-      padding: 0px 20px;
-      gap: 19px;
-    }
-    .tariff-features .feature img {
-      height: 32px;
-      width: 32px;
-    }
-    .tariff-tile .tariff-description {
-      padding: 20px 20px;
-      gap: 15px;
-    }
-    .tariff-tile .tariff-description h2 {
-      font-size: 21px;
-    }
-    .tariff-description .tariff-price-block {
-      gap: 15px;
-    }
-    .tariff-description .record-button {
-      font-size: 21px;
-      height: 48px;
-    }
-    .tariff-price-block .discount {
-      min-height: 32px;
-      min-width: 48px;
-    }
-    .price-info .prices {
-      gap: 13px;
-    }
-    footer {
-      padding: 25px 44px;
-    }
+  .tariff-price-block .discount {
+    min-height: 32px;
+    min-width: 48px;
   }
-  
-  @media (max-width: 575px) {
-    .navbar {
-      height: 64px;
-      padding: 3px 11px;
-    }
-    .company-name {
-      font-size: 20px;
-    }
-    .logo {
-      margin-right: 10px;
-      height: 40px;
-      width: 52px;
-    }
-    .navbar-menu {
-      display: none;
-    }
-    .button-menu {
-      width: 64px;
-      height: 24px;
-    }
-    .button-menu .line {
-      width: 64px;
-      height: 4px;
-      border-radius: 5px;
-    }
-    .menu-item {
-      padding: 5px 20px;
-      font-size: 20px;
-    }
-    
-    .course-sections {
-      padding: 0px 11px;
-      gap: 20px;
-    }
-    .course-sections .preview-of-course-structure{
-      margin-top: 84px;
-      padding: 16px 0px 20px 20px;
-    }
-    .icon-developer {
-      display: none;
-    } 
-    .description-of-the-proffesion-with-recording-elements {
-      display: none;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile {
-      display: flex;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
-      display: flex;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile h1 {
-      font-size: 29px;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile h2 {
-      font-size: 21px;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile p {
-      font-size: 21px;
-    }
-    .course-entry-structure .course-entry-button {
-      font-size: 26px;
-    }
-    .course-entry-structure h2,
-    .course-entry-structure p {
-      font-size: 16px;
-    }
-    .course-entry-structure .course-entry-button {
-      min-height: 51px;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile .top-content__description {
-      max-width: 231px;
-      gap: 45px;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile img {
-      max-width: 250px;
-      height: 100%;
-    }
-    .description-of-the-proffesion-with-recording-elements__mobile .bottom-content {
-      padding-right: 9px;
-    }
-    .course-sections .grid-block__description-of-program-structure {
-      padding: 20px 20px;
-      height: 380px;
-      row-gap: 16px;
-      border-radius: 20px;
-    }
-    .grid-block__description-of-program-structure .grid-item {
-      width: 100%;
-      min-height: 32px;
-      max-height: 57px;
-      font-size: 16px;
-    }
-    .grid-block__description-of-program-structure .grid-item__icon {
-      width: 32px;
-      height: 32px;
-    }
-    .grid-block__description-of-program-structure .grid-item:nth-child(3) {
-      order: 2;
-    }
-    .course-sections .target-audience {
-      padding: 16px 20px 20px 20px;
-      border-radius: 20px;
-      gap: 20px
-    }
-    h1 {
-      font-size: 36px;
-    }
-    .target-audience .grid-block__target-audience-tiles {
-      height: 916px;
-      gap: 20px;
-    }
-    .target-audience-tiles__top-row,
-    .target-audience-tiles__bottom-row {
-      grid-template-columns: 1fr;
-      gap: 28px;
-    }
-    .target-audience-tiles__bottom-row .target-audience__tile:nth-child(1) {
-      order: 2;
-    }
-    .target-audience__tile {
-      display: none;
-    }
-  
-    .target-audience-tile__mobile {
-      display: flex;
-      flex-direction: column;
-      padding: 16px;
-      color: #FFFFFF;
-      background-color: #17282F;
-      border-radius: 20px;
-      min-height: 188px;
-      max-height: 228px;
-      gap: 11px;
-    }
-  
-    .target-audience-tile-without-icon__mobile {
-      color: #000000;
-      background-color: #7DAEA3;
-    }
-  
-    .target-audience-tile-mobile__title {
-      display: flex;
-      justify-content: space-between;
-      height: 64px;
-    }
-  
-    .target-audience-tile__mobile h2 {
-      font-size: 21px;
-      width: 142px;
-    }
-  
-    .target-audience-tile-without-icon__mobile h2 {
-      width: auto;
-      margin-bottom: 7px;
-    }
-  
-    .target-audience-tile-mobile__description p {
-      font-family: Oswald-Light;
-      font-size: 16px;
-    }
-    img {
-      width: 103px;
-      height: 64px;
-    }
-    .course-sections .teachers-mentors {
-      padding: 16px 20px 20px 20px;
-      border-radius: 20px;
-      align-items: center;
-      gap: 15px;
-    }
-    .teachers-mentors .description {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-    .teachers-mentors .description p {
-      font-size: 16px;
-      height: 133px;
-    }
-    .grid-block__mentor-tiles {
-      grid-template-columns: repeat(1, 100%);
-      gap: 41px;
-    }
-    .grid-block__mentor-tiles .tile {
-      min-height: 450px;
-    }
-    .grid-block__mentor-tiles .tile img {
-      width: 100%;
-      height: 280px;
-    }
-    .grid-block__mentor-tiles .description-frame {
-      padding: 10px 26px 20px 26px;
-      gap: 10px;
-    }
-    .grid-block__mentor-tiles .description-frame__stack {
-      gap: 7px;
-    }
-    .grid-block__mentor-tiles .description-frame h2,
-    .grid-block__mentor-tiles .description-frame__stack h1,
-    .grid-block__mentor-tiles .description-frame__stack p {
-      font-size: 16px;
-    }
-    .content-grid .content-item {
-      display: none;
-    }
-    .content-grid .content-item__mobile {
-      display: flex;
-    }
-    .course-sections .program {
-      padding: 16px 20px 20px 20px;
-    }
-    .program .spoiler {
-      padding: 20px 30px;
-    }
-    .spoiler .spoiler-preview__title p {
-      max-width: 220px;
-    }
-    .spoiler-preview .spoiler-toggle-button {
-      width: 48px;
-      height: 48px;
-    }
-    .spoiler-content .content-grid {
-      grid-template-columns: 1fr;
-    }
-    .course-sections .tariffs {
-      padding: 12px 20px 20px 20px;
-      border-radius: 20px;
-      gap: 30px;
-    }
-    .tariffs h1 {
-      text-align: center;
-    }
-    .tariffs .grid-block__tariff-tiles {
-      grid-template-columns: 1fr;
-      gap: 34px;
-    }
-    .grid-block__tariff-tiles .tariff-tile {
-      padding: 25px 5px;
-      gap: 20px;
-    }
-    .tariff-tile .tariff-features {
-      padding: 0px 20px;
-      gap: 19px;
-    }
-    .tariff-features .feature img {
-      height: 32px;
-      width: 32px;
-    }
-    .tariff-tile .tariff-description {
-      padding: 20px 20px;
-      gap: 15px;
-    }
-    .tariff-tile .tariff-description h2 {
-      font-size: 21px;
-    }
-    .tariff-description .tariff-price-block {
-      gap: 15px;
-    }
-    .tariff-description .record-button {
-      font-size: 21px;
-      height: 48px;
-    }
-    .tariff-price-block .discount {
-      min-height: 32px;
-      min-width: 48px;
-    }
-    .price-info .prices {
-      gap: 10px;
-    }
-    footer {
-      padding: 25px 11px;
-    }
+  .price-info .prices {
+    gap: 10px;
   }
+  footer {
+    padding: 25px 11px;
+  }
+}

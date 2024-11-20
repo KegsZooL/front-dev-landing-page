@@ -8,3 +8,34 @@ function theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 ?>
 
+<?php
+    function mytheme_customize_register( $wp_customize ) {
+
+        $wp_customize->add_section(
+            'data_site_section',
+            array(
+                'title' => 'Данные сайта',
+                'capability' => 'edit_theme_options',
+                'description' => "Тут можно указать данные сайта"
+            )
+        );
+
+        $wp_customize->add_setting(
+            'course_end_date',
+            array(
+                'default' => '',
+                'type' => 'option'
+            )
+        );
+
+        $wp_customize->add_control(
+            'course_end_date_control',
+            array(
+                'type' => 'date',
+                'label' => "Дата окончания курса",
+                'section' => 'data_site_section',
+                'settings' => 'course_end_date'
+            )
+        );
+    }
+    add_action( 'customize_register', 'mytheme_customize_register' );

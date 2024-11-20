@@ -18,9 +18,17 @@
             <div class="discount-expiration-date__description">
                 <p>Дата окончания скидок</p>
                 <h2>
-                    <?php 
-                    $expiration_date = get_post_meta(get_the_ID(), 'discount_expiration_date', true);
-                    echo $expiration_date ? esc_html($expiration_date) : 'Дата не указана';
+                <?php 
+                    $course_end_date = get_option('course_end_date');
+                    if ($course_end_date) {
+                        $date = DateTime::createFromFormat('Y-m-d', $course_end_date);
+
+                        if ($date) {
+                            echo esc_html( date_i18n('j F', $date->getTimestamp()) );
+                        } else { echo 'Некорректный формат даты'; }
+                    } else {
+                        echo '30 декабря';
+                    }
                     ?>
                 </h2>
             </div>
